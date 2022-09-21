@@ -6,12 +6,14 @@
     "@opam/dune": "3.4.1",
     "@opam/reason": "^3.8.1",
     "melange": "melange-re/melange",
-    "ocaml": "4.14.0"
+    "ocaml": "4.14.0",
+    "native-react": "*"
   },
   "devDependencies": { "@opam/ocaml-lsp-server": "*" },
   "resolutions": {
     "esy-openssl":
-      "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1"
+      "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
+      "native-react": "ml-in-barcelona/native-react-dom:native-react.opam#7435a35"
   },
   "esy": { "buildsInSource": "unsafe" }
 }

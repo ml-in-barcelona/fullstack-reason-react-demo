@@ -1,9 +1,5 @@
 (executable
  (name server)
- (libraries shared dream))
-
-(rule
- (targets server.re)
- (deps server.eml.re)
- (action
-  (run dream_eml %{deps} --workspace %{workspace_root})))
+ (libraries shared dream native-react.react native-react.reactDom)
+ ; (preprocess (pps native-react.ppx))
+ )
