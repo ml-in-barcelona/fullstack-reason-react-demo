@@ -1,5 +1,5 @@
 (executable
  (name server)
  (libraries shared dream native-react.react native-react.reactDom)
- ; (preprocess (pps native-react.ppx))
- )
+ (preprocess
+  (pps native-react.ppx)))

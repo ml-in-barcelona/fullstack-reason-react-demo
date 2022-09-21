@@ -1,3 +1,6 @@
+# fullstack-react
+
+<!--
 # `r-fullstack-melange`
 
 ```bash
@@ -7,7 +10,7 @@ make client-bundle-watch
 make start # need to restart, it doesn't watch, it can be done with a dune target I believe
 ```
 
-<!-- <br>
+<br>
 
 This example shares a toy function between client and server using
 [Melange](https://github.com/melange-re/melange). The function is in
