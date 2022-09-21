@@ -1,0 +1,9 @@
+{
+  "name": "fullstack-melange",
+  "dependencies": {
+    "bs-webapi": "*",
+    "concurrently": "^7.4.0",
+    "esbuild": "*",
+    "esy": "*"
+  }
+}
