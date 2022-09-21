@@ -3,6 +3,7 @@
   "bs-dependencies": [
     "bs-webapi"
   ],
+  "reason": { "react-jsx": 3 },
   "sources": [
     "shared",
     "client"
