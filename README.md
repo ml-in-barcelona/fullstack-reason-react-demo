@@ -4,6 +4,7 @@
 make dev
 make client-watch
 make client-bundle-watch
+make start # need to restart, it doesn't watch, it can be done with a dune target I believe
 ```
 
 <!-- <br>
