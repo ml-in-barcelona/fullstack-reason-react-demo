@@ -1,16 +1,4 @@
-open Webapi.Dom;
-
-let () = {
-  let body = document |> Document.querySelector("body");
-
-  switch (body) {
+switch (ReactDOM.querySelector("#root")) {
+  | Some(el) => ReactDOM.render(<Shared.App><h2>{React.string("client")}</h2></Shared.App>, el)
   | None => ()
-  | Some(body) =>
-
-    let text = Shared.greet(`Client);
-
-    let p = document |> Document.createElement("p");
-    p->Element.setInnerText(text);
-    body |> Element.appendChild(p);
-  }
 };

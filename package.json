@@ -1,9 +1,11 @@
 {
   "name": "fullstack-melange",
   "dependencies": {
+    "@rescript/react": "^0.10.3",
     "bs-webapi": "*",
     "concurrently": "^7.4.0",
     "esbuild": "*",
-    "esy": "*"
+    "esy": "*",
+    "reason-react": "^0.9.1"
   }
 }

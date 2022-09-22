@@ -1,7 +1,7 @@
 {
   "name": "fullstack-melange",
   "bs-dependencies": [
-    "bs-webapi"
+    "@rescript/react"
   ],
   "reason": { "react-jsx": 3 },
   "sources": [
