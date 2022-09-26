@@ -1,5 +1,6 @@
 (library
  (name shared)
  (libraries native-react.react native-react.reactDom)
+ (wrapped false)
  (preprocess
   (pps native-react.ppx)))
