@@ -8,5 +8,5 @@ let make = (~url, ~txt) => {
       ReasonReactRouter.push(url);
     }}>
     {React.string(txt)}
-  </a>
+  </a>;
 };

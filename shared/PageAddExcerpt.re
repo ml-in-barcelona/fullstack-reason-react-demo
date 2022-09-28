@@ -164,7 +164,8 @@ let make = () => {
             {List.mapi(
                (_i, x) =>
                  <div
-                   className="md:flex md:items-center mb-6" key={string_of_int(_i)}>
+                   className="md:flex md:items-center mb-6"
+                   key={string_of_int(_i)}>
                    x
                  </div>,
                [

@@ -16,5 +16,5 @@ let make = (~e: Excerpt_t.t) => {
          )}
       </cite>
     </blockquote>
-  </div>
+  </div>;
 };
