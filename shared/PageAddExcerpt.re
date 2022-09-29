@@ -4,13 +4,13 @@ type action =
   | SourceChanged(string)
   | PageChanged(string)
   | FormSubmitted
-  | AddExcerptRequestSucceeded(Excerpt_t.t)
+  | AddExcerptRequestSucceeded(ExcerptT.t)
   | AddExcerptRequestFailed(string);
 
 type submissionState =
   | NotAsked
   | Loading
-  | Success(Excerpt_t.t)
+  | Success(ExcerptT.t)
   | Error(string);
 
 type state = {
@@ -21,11 +21,14 @@ type state = {
   submissionState,
 };
 
-let row = (left, right) =>
-  <>
-    <div className="md:w-1/3"> <> left </> </div>
-    <div className="md:w-2/3"> <> right </> </div>
-  </>;
+module Row = {
+  [@react.component]
+  let make = (~left, ~right) =>
+    <>
+      <div className="md:w-1/3"> left </div>
+      <div className="md:w-2/3"> right </div>
+    </>;
+}
 
 let reducer = (state, action) =>
   switch (action) {
@@ -56,49 +59,49 @@ let make = () => {
     );
 
   let txtInput = (name, value, _onChange) =>
-    row(
-      <label
+    <Row left={<label
         className="block text-gray-500 md:text-right mb-1 md:mb-0 pr-4"
         htmlFor="inline-full-name">
         {React.string(String.capitalize_ascii(name))}
-      </label>,
-      <Input
+      </label>}
+      right={<input
         className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-        input_type=`Text
+        type_="text"
         name
-        onChange={e => _onChange(ReactEvent.Form.target(e)##value)}
         value
-      />,
-    );
+        onChange={_e => _onChange("asdf"/* ReactEvent.Form.target(e)##value */)}
+      />}
+    />;
 
   let excerptInput = {
     let name = "excerpt";
-    row(
+    <Row left={
       <label
         className="block text-gray-500 md:text-right mb-1 md:mb-0 pr-4"
         htmlFor=name>
         {React.string(String.capitalize_ascii(name))}
-      </label>,
-      <Textarea
+      </label>}
+      right={
+      <textarea
         className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
         name
         value={state.excerpt}
-        onChange={e =>
-          dispatch @@ ExcerptChanged(ReactEvent.Form.target(e)##value)
+        onChange={_e =>
+          /* ReactEvent.Form.target(e)##value */
+          /* Js.log(ReactEvent.Form.target(e)); */
+          dispatch @@ ExcerptChanged("asdf")
         }
-      />,
-    );
+      />} />;
   };
 
   let submit =
-    row(
-      <div />,
-      <Input
+    <Row left={<div />} right={
+      <input
         className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-        input_type=`Submit
+        type_="submit"
         value="Submit"
-      />,
-    );
+      />
+    } />;
 
   <PageContainer>
     {switch (state.submissionState) {
@@ -116,13 +119,13 @@ let make = () => {
          </h1>
          <p> {React.string("Error: " ++ msg)} </p>
        </>
-     | Success(e) =>
+     | Success(exceprt) =>
        <>
          <h1 className="font-semibold text-xl tracking-tight mb-8">
            {React.string("Excerpt added successfully")}
          </h1>
          <p> {React.string("Added the following excerpt: ")} </p>
-         <Excerpt e />
+         <Excerpt exceprt />
          <Link url="/" txt="Back home" />
        </>
      | NotAsked =>
@@ -130,11 +133,11 @@ let make = () => {
          <h1 className="font-semibold text-xl tracking-tight mb-8">
            {React.string("Add new excerpt")}
          </h1>
-         {<Form
+         {<form
             onSubmit={e => {
               ReactEvent.Form.preventDefault(e);
               dispatch @@ FormSubmitted;
-              Client.request(
+              /* Client.request(
                 ~method_=Post,
                 ~input={
                   Excerpt_bs.write_t({
@@ -159,7 +162,7 @@ let make = () => {
                    )
                    ->Js.Promise.resolve
                  )
-              |> ignore;
+              |> ignore; */
             }}>
             {List.mapi(
                (_i, x) =>
@@ -182,8 +185,9 @@ let make = () => {
                  submit,
                ],
              )
-             |> React.list}
-          </Form>}
+             |> Array.of_list
+             |> React.array}
+          </form>}
        </>
      }}
   </PageContainer>;

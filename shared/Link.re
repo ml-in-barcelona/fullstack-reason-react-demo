@@ -5,7 +5,7 @@ let make = (~url, ~txt) => {
     href=url
     onClick={e => {
       ReactEvent.Mouse.preventDefault(e);
-      ReasonReactRouter.push(url);
+      /* ReasonReactRouter.push(url); */
     }}>
     {React.string(txt)}
   </a>;
