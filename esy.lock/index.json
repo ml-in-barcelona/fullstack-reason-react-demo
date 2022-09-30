@@ -1,5 +1,5 @@
 {
-  "checksum": "b7c9f19d65b6b57b4db20c601612eb21",
+  "checksum": "10166e4ff35b931ba6fe6f53f4f4004e",
   "root": "fullstack-melange@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -32,16 +32,16 @@
       "dependencies": [],
       "devDependencies": []
     },
-    "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#39310a9@d41d8cd9": {
+    "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#8022c38@d41d8cd9": {
       "id":
-        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#39310a9@d41d8cd9",
+        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#8022c38@d41d8cd9",
       "name": "native-react",
       "version":
-        "github:ml-in-barcelona/native-react-dom:native-react.opam#39310a9",
+        "github:ml-in-barcelona/native-react-dom:native-react.opam#8022c38",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/native-react-dom:native-react.opam#39310a9"
+          "github:ml-in-barcelona/native-react-dom:native-react.opam#8022c38"
         ]
       },
       "overrides": [],
@@ -55,16 +55,16 @@
         "@opam/ppxlib@opam:0.27.0@08d8f65d", "@opam/dune@opam:3.4.1@84d54aea"
       ]
     },
-    "melange@github:melange-re/melange#cb7d065a5c1cf747c25063508035ff8a955a9bc1@d41d8cd9": {
+    "melange@github:melange-re/melange#d97908651f5798855ff61922f1f9ca9513bc1f42@d41d8cd9": {
       "id":
-        "melange@github:melange-re/melange#cb7d065a5c1cf747c25063508035ff8a955a9bc1@d41d8cd9",
+        "melange@github:melange-re/melange#d97908651f5798855ff61922f1f9ca9513bc1f42@d41d8cd9",
       "name": "melange",
       "version":
-        "github:melange-re/melange#cb7d065a5c1cf747c25063508035ff8a955a9bc1",
+        "github:melange-re/melange#d97908651f5798855ff61922f1f9ca9513bc1f42",
       "source": {
         "type": "install",
         "source": [
-          "github:melange-re/melange#cb7d065a5c1cf747c25063508035ff8a955a9bc1"
+          "github:melange-re/melange#d97908651f5798855ff61922f1f9ca9513bc1f42"
         ]
       },
       "overrides": [],
@@ -86,8 +86,8 @@
       "overrides": [],
       "dependencies": [
         "ocaml@4.14.0@d41d8cd9",
-        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#39310a9@d41d8cd9",
-        "melange@github:melange-re/melange#cb7d065a5c1cf747c25063508035ff8a955a9bc1@d41d8cd9",
+        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#8022c38@d41d8cd9",
+        "melange@github:melange-re/melange#d97908651f5798855ff61922f1f9ca9513bc1f42@d41d8cd9",
         "@opam/reason@opam:3.8.1@694249e6", "@opam/dune@opam:3.4.1@84d54aea",
         "@opam/dream@opam:1.0.0~alpha4@c4ed8e88",
         "@opam/conf-libssl@opam:3@e3469184"

@@ -5,7 +5,7 @@ module Page = {
       <head> <title> {React.string("SSR React")} </title> </head>
       <body>
         <div id="root">
-          <Shared.App> <h2> {React.string("server")} </h2> </Shared.App>
+          <Shared.App />
         </div>
         <script src="/static/client.js" />
       </body>
@@ -16,7 +16,7 @@ module Page = {
 let home = ReactDOM.renderToStaticMarkup(<Page />);
 
 let () =
-  Dream.run @@
+  Dream.run(~port=9999) @@
   Dream.logger @@
   Dream.router([
     Dream.get("/", _ => Dream.html(home)),

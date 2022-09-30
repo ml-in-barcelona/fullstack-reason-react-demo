@@ -17,10 +17,10 @@ install:
 	esy install
 
 client-bundle: ## Bundle the JS code
-	$(ESY) esbuild _build/default/client/client.js --bundle --outfile=static/client.js
+	$(ESY) esbuild _build/default/client/client.js --bundle --outfile=static/--external:melange/lib client.js
 
 client-bundle-watch: ## Watch and bundle the JS code
-	esy esbuild _build/default/client/client.js --bundle --outfile=static/client.js --watch
+	esy esbuild _build/default/client/client.js --bundle --outfile=static/client.js --external:melange/lib --watch
 
 client-build: ## Build Reason code
 	$(MEL) build
