@@ -1,5 +1,9 @@
 (library
  (name shared)
- (libraries native-react.react native-react.reactDom)
+ (libraries
+  native-react.react
+  native-react.reactDom
+  native-react.reasonReactRouter)
+ (wrapped false)
  (preprocess
   (pps native-react.ppx)))

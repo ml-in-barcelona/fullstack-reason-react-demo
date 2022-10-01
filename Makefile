@@ -16,16 +16,16 @@ help: ## Print this help message
 install:
 	esy install
 
-client-bundle:
-	$(ESY) esbuild _build/default/client/client.js --bundle --outfile=static/client.js
+client-bundle: ## Bundle the JS code
+	$(ESY) esbuild _build/default/client/client.js --bundle --outfile=static/--external:melange/lib client.js
 
-client-bundle-watch:
-	esy esbuild _build/default/client/client.js --bundle --outfile=static/client.js --watch
+client-bundle-watch: ## Watch and bundle the JS code
+	esy esbuild _build/default/client/client.js --bundle --outfile=static/client.js --external:melange/lib --watch
 
-client-build:
+client-build: ## Build Reason code
 	$(MEL) build
 
-client-watch:
+client-watch: ## Watch reason code
 	$(MEL) build --watch
 
 build: ## Build the project, including non installable libraries and executables
@@ -34,7 +34,7 @@ build: ## Build the project, including non installable libraries and executables
 build-prod: ## Build for production (--profile=prod)
 	$(DUNE) build --profile=prod @@default
 
-start:
+start: ## Start the server
 	$(DUNE) exec --root . server/server.exe
 
 dev: ## Build in watch mode
@@ -43,7 +43,7 @@ dev: ## Build in watch mode
 clean: ## Clean artifacts
 	$(DUNE) clean
 
-format: ## Format the codebase with ocamlformat
+format: ## Format the codebase with ocamlformat/refmt
 	$(DUNE) build @fmt --auto-promote
 
 format-check: ## Checks if format is correct
