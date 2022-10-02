@@ -15,5 +15,12 @@
       "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
       "native-react": "ml-in-barcelona/native-react-dom:native-react.opam#3116608"
   },
-  "esy": { "buildsInSource": "unsafe" }
+  "esy": {
+    "buildsInSource": "unsafe",
+    "build": [
+      "rm -rf node_modules/melange",
+      "ln -sfn #{melange.install} node_modules/melange",
+      "mel build"
+    ]
+  }
 }

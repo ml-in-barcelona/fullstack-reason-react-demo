@@ -7,5 +7,9 @@
   "sources": [
     "shared",
     "client"
-  ]
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  }
 }

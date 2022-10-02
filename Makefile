@@ -4,7 +4,7 @@ DUNE = esy dune
 MEL = esy mel
 # current_hash = $(shell git rev-parse HEAD)
 
-.PHONY: build build-prod dev test test-promote deps format format-check init publish-example
+.PHONY: build build-prod dev test test-promote deps format format-check publish-example
 
 .PHONY: help
 help: ## Print this help message

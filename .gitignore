@@ -8,6 +8,8 @@ _esy/
 dune.mel
 /dune
 
+**/*.js
+
 # esbuild.
 static/
 
