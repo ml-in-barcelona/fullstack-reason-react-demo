@@ -8,7 +8,8 @@ _esy/
 dune.mel
 /dune
 
-**/*.js
+client/*.js
+shared/*.js
 
 # esbuild.
 static/

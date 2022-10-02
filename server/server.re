@@ -16,8 +16,7 @@ module Page = {
 let home = ReactDOM.renderToStaticMarkup(<Page />);
 
 let () =
-  Dream.run(~port=9999) @@
-  Dream.logger @@
+  Dream.run(~port=4444) @@
   Dream.router([
     Dream.get("/", _ => Dream.html(home)),
     Dream.get("/static/**", Dream.static("./static")),
