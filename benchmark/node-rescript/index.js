@@ -3,9 +3,9 @@ const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const express = require("express");
 
-const shared = require("../shared/shared.js");
+const shared = require("../../shared/shared.js");
 
-const PORT = 3000;
+const PORT = 3400;
 const app = express();
 
 let page = () =>
