@@ -1,18 +1,13 @@
-const path = require("path");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const express = require("express");
-
-var PageWelcome = require("./PageWelcome.js");
+const PageWelcome = require("./PageWelcome.js");
 
 function Shared() {
-  return React.createElement(PageWelcome.make, {});
+  return React.createElement(PageWelcome.default, {});
 }
 
-const PORT = 5555;
-const app = express();
-
-let page = () =>
+const page = () =>
   React.createElement(
     "html",
     null,
@@ -39,6 +34,8 @@ let page = () =>
     )
   );
 
+const app = express();
+
 app.get("/", (_req, res) => {
   return res.send(
     `<div id="root">${ReactDOMServer.renderToStaticMarkup(
@@ -47,9 +44,7 @@ app.get("/", (_req, res) => {
   );
 });
 
-app.use(
-  express.static(path.resolve(__dirname, ".", "dist"), { maxAge: "30d" })
-);
+const PORT = 5555;
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
