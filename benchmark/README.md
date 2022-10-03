@@ -23,7 +23,7 @@ Command to run `wrk -t12 -c400 -d30s http://localhost:xxxx`
 
 ## Results
 
-### `node-express-rescript`: Nodejs with Express running JS compiled by Melange
+### node-express-rescript
 
   ```cd benchmark/node-express-rescript; NODE_ENV=production node index.js```
 
@@ -37,7 +37,7 @@ Requests/sec:   6877.41
 Transfer/sec:      9.37MB
 ```
 
-### `node-express-js` Nodejs with Express running JS app
+### node-express-js
 
   ```cd benchmark/node-express-js; NODE_ENV=production node index.js```
 
@@ -51,7 +51,7 @@ Requests/sec:   7742.55
 Transfer/sec:      7.18MB
 ```
 
-### `bun-js` Bun with JS app
+### bun-js
 
   ```cd benchmark/bun-js; NODE_ENV=production ~/bun/bin/bun run index.js```
 
@@ -65,7 +65,7 @@ Requests/sec:  10464.64
 Transfer/sec:      8.55MB
 ```
 
-### `server` OCaml with Dream running native-react app
+### server
 
   ```make server-start```
 
