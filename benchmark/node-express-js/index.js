@@ -44,7 +44,7 @@ app.get("/", (_req, res) => {
   );
 });
 
-const PORT = 5555;
+const PORT = 1337;
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
