@@ -1,5 +1,5 @@
 {
-  "name": "fullstack-melange",
+  "name": "fullstack-reason-react",
   "dependencies": {
     "@rescript/react": "^0.10.3",
     "bs-webapi": "*",

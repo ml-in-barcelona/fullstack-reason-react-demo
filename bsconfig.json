@@ -5,11 +5,14 @@
   ],
   "reason": { "react-jsx": 3 },
   "sources": [
-    "shared",
+    /* "shared", */
     "client"
   ],
   "package-specs": {
     "module": "commonjs",
     "in-source": true
-  }
+  },
+  "ppx-flags": [
+    "react-jsx-ppx.ppx"
+  ]
 }
