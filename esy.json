@@ -3,7 +3,7 @@
   "dependencies": {
     "@opam/conf-libssl": "3",
     "@opam/dream": "1.0.0~alpha4",
-    "@opam/dune": "3.4.1",
+    "@opam/dune": "3.5.0",
     "@opam/reason": "^3.8.1",
     "melange": "melange-re/melange",
     "ocaml": "4.14.0",
@@ -14,8 +14,8 @@
   "resolutions": {
     "esy-openssl":
       "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
-    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#b0143e0",
-    "native-react": "ml-in-barcelona/native-react-dom:native-react.opam#3116608"
+    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#e105100ebff1125b76bdff9b9b8a54e40fce1c25",
+    "native-react": "ml-in-barcelona/native-react-dom:native-react.opam#34392b154ae60d747c68207b22cda9a3c17e0369"
   },
   "esy": {
     "buildsInSource": "unsafe",

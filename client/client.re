@@ -1,4 +1,4 @@
-/* module Wat = {
+module Wat = {
   [@react.component]
   let make = (~exceprt: ExcerptT.t) => {
     let page =
@@ -19,19 +19,10 @@
       </blockquote>
     </div>;
   };
-}; */
-
-type person = {
-  name: string,
 };
 
-let bucklescript = [%bs.obj {name: "Bob"}];
-
-<div className="" /> |> ignore;
-
-/* switch (ReactDOM.querySelector("#root")) {
+switch (ReactDOM.querySelector("#root")) {
 | Some(el) =>
   ReactDOM.render(<Wat />, el)
 | None => ()
 };
- */
