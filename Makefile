@@ -27,8 +27,8 @@ client-bundle-watch: ## Watch and bundle the JS code
 client-build: ## Build Reason code
 	$(MEL) build
 
-.PHONY: client-watch
-client-watch: ## Watch reason code
+.PHONY: client-build-watch
+client-build-watch: ## Watch reason code
 	$(MEL) build --watch
 
 .PHONY: server-build
