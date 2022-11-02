@@ -2,7 +2,8 @@ module Page = {
   [@react.component]
   let make = () => {
     <html>
-      <head> <title> {React.string("SSR React")} </title> </head>
+      <head> <title> {React.string("SSR React")} </title>
+      <style>{Emotion.render_style_tag() |> React.string}</style></head>
       <body>
         <div id="root">
           <Shared.App />

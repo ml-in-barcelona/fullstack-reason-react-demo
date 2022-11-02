@@ -2,7 +2,6 @@ project_name = fullstack-react
 
 DUNE = esy dune
 MEL = esy mel
-# current_hash = $(shell git rev-parse HEAD)
 
 .PHONY: help
 help: ## Print this help message

@@ -1,5 +1,4 @@
-let style = Emotion.create();
-let className = style([Css.Properties.display(`block)]);
+let className = Emotion.style([Css.Properties.display(`block)]);
 
 module Header = {
   [@react.component]
