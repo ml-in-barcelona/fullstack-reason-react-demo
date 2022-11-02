@@ -3,6 +3,7 @@
  (libraries
   native-react.react
   native-react.reactDom
+  native-react.emotion
   native-react.reasonReactRouter)
  (wrapped false)
  (preprocess

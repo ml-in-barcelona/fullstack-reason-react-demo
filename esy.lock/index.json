@@ -1,5 +1,5 @@
 {
-  "checksum": "3b1124b97be6079e1884e4428ef811da",
+  "checksum": "6d5cfae10e2b7708abb6a7c1dfa79632",
   "root": "fullstack-melange@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -55,16 +55,16 @@
       "dependencies": [],
       "devDependencies": []
     },
-    "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#34392b154ae60d747c68207b22cda9a3c17e0369@d41d8cd9": {
+    "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#1a0851cbd2b5ea00037d4f53145ced7c170920aa@d41d8cd9": {
       "id":
-        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#34392b154ae60d747c68207b22cda9a3c17e0369@d41d8cd9",
+        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#1a0851cbd2b5ea00037d4f53145ced7c170920aa@d41d8cd9",
       "name": "native-react",
       "version":
-        "github:ml-in-barcelona/native-react-dom:native-react.opam#34392b154ae60d747c68207b22cda9a3c17e0369",
+        "github:ml-in-barcelona/native-react-dom:native-react.opam#1a0851cbd2b5ea00037d4f53145ced7c170920aa",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/native-react-dom:native-react.opam#34392b154ae60d747c68207b22cda9a3c17e0369"
+          "github:ml-in-barcelona/native-react-dom:native-react.opam#1a0851cbd2b5ea00037d4f53145ced7c170920aa"
         ]
       },
       "overrides": [],
@@ -111,7 +111,7 @@
       "dependencies": [
         "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#e105100ebff1125b76bdff9b9b8a54e40fce1c25@d41d8cd9",
         "ocaml@4.14.0@d41d8cd9",
-        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#34392b154ae60d747c68207b22cda9a3c17e0369@d41d8cd9",
+        "native-react@github:ml-in-barcelona/native-react-dom:native-react.opam#1a0851cbd2b5ea00037d4f53145ced7c170920aa@d41d8cd9",
         "melange@github:melange-re/melange#4025c75e765db00d9d353bf67530132709b7901c@d41d8cd9",
         "@opam/reason@opam:3.8.1@694249e6", "@opam/dune@opam:3.5.0@fba55e5e",
         "@opam/dream@opam:1.0.0~alpha4@c4ed8e88",

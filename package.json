@@ -2,8 +2,11 @@
   "name": "fullstack-reason-react",
   "dependencies": {
     "@rescript/react": "^0.10.3",
+    "bs-css": "^15.3.1",
+    "bs-css-emotion": "^4.3.1",
     "bs-webapi": "*",
     "concurrently": "^7.4.0",
+    "emotion": "^11.0.0",
     "esbuild": "*",
     "esy": "*",
     "express": "^4.18.1",

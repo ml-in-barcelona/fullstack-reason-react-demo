@@ -1,6 +1,6 @@
 {
   "ocaml.sandbox": {
     "kind": "esy",
-    "root": "${workspaceFolder:fullstack-react}"
+    "root": "${workspaceFolder:fullstack-reason-react}"
   }
 }

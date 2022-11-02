@@ -39,7 +39,7 @@ let make = () => {
         <>
           <li>
             <Link
-              url={"counter!:"}
+              url={"/counter"}
               txt="Counter"
             />
           </li>
