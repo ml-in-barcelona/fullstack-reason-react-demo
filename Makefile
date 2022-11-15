@@ -1,4 +1,4 @@
-project_name = fullstack-react
+project_name = fullstack-reason-react
 
 DUNE = esy dune
 MEL = esy mel

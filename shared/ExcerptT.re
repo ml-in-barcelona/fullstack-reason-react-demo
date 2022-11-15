@@ -3,4 +3,4 @@ type t = {
   excerpt: string,
   author: string,
   source: string,
-}
+};

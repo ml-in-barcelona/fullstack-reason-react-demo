@@ -13,8 +13,13 @@ module Wat = {
         <p className="mb-2"> {React.string(excerpt.excerpt)} </p>
         <cite>
           {React.string(
-            Printf.sprintf("-- %s (%s%s)", excerpt.author, excerpt.source, page),
-          )}
+             Printf.sprintf(
+               "-- %s (%s%s)",
+               excerpt.author,
+               excerpt.source,
+               page,
+             ),
+           )}
         </cite>
       </blockquote>
     </div>;
@@ -26,10 +31,9 @@ let excerpt: ExcerptT.t = {
   excerpt: "I'm an excerpt",
   author: "Author",
   source: "https://sourcegraph.com/github.com/facebook/hhvm/-/tree/hphp/hack/src/utils",
-}
+};
 
 switch (ReactDOM.querySelector("#root")) {
-| Some(el) =>
-  ReactDOM.render(<Wat excerpt />, el)
+| Some(el) => ReactDOM.render(<Wat excerpt />, el)
 | None => ()
 };

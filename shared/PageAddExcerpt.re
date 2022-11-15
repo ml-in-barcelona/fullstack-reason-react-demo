@@ -28,7 +28,7 @@ module Row = {
       <div className="md:w-1/3"> left </div>
       <div className="md:w-2/3"> right </div>
     </>;
-}
+};
 
 let reducer = (state, action) =>
   switch (action) {
@@ -59,49 +59,62 @@ let make = () => {
     );
 
   let txtInput = (name, value, _onChange) =>
-    <Row left={<label
-        className="block text-gray-500 md:text-right mb-1 md:mb-0 pr-4"
-        htmlFor="inline-full-name">
-        {React.string(String.capitalize_ascii(name))}
-      </label>}
-      right={<input
-        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-        type_="text"
-        name
-        value
-        onChange={_e => _onChange("asdf"/* ReactEvent.Form.target(e)##value */)}
-      />}
+    <Row
+      left={
+        <label
+          className="block text-gray-500 md:text-right mb-1 md:mb-0 pr-4"
+          htmlFor="inline-full-name">
+          {React.string(String.capitalize_ascii(name))}
+        </label>
+      }
+      right={
+        <input
+          className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+          type_="text"
+          name
+          value
+          onChange={_e =>
+            _onChange("asdf" /* ReactEvent.Form.target(e)##value */)
+          }
+        />
+      }
     />;
 
   let excerptInput = {
     let name = "excerpt";
-    <Row left={
-      <label
-        className="block text-gray-500 md:text-right mb-1 md:mb-0 pr-4"
-        htmlFor=name>
-        {React.string(String.capitalize_ascii(name))}
-      </label>}
+    <Row
+      left={
+        <label
+          className="block text-gray-500 md:text-right mb-1 md:mb-0 pr-4"
+          htmlFor=name>
+          {React.string(String.capitalize_ascii(name))}
+        </label>
+      }
       right={
-      <textarea
-        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-        name
-        value={state.excerpt}
-        onChange={_e =>
-          /* ReactEvent.Form.target(e)##value */
-          /* Js.log(ReactEvent.Form.target(e)); */
-          dispatch @@ ExcerptChanged("asdf")
-        }
-      />} />;
+        <textarea
+          className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+          name
+          value={state.excerpt}
+          onChange={_e =>
+            /* ReactEvent.Form.target(e)##value */
+            /* Js.log(ReactEvent.Form.target(e)); */
+            dispatch @@ ExcerptChanged("asdf")}
+        />
+      }
+    />;
   };
 
   let submit =
-    <Row left={<div />} right={
-      <input
-        className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-        type_="submit"
-        value="Submit"
-      />
-    } />;
+    <Row
+      left={<div />}
+      right={
+        <input
+          className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          type_="submit"
+          value="Submit"
+        />
+      }
+    />;
 
   <PageContainer>
     {switch (state.submissionState) {
@@ -137,57 +150,58 @@ let make = () => {
             onSubmit={e => {
               ReactEvent.Form.preventDefault(e);
               dispatch @@ FormSubmitted;
-              /* Client.request(
-                ~method_=Post,
-                ~input={
-                  Excerpt_bs.write_t({
-                    author: state.author,
-                    excerpt: state.excerpt,
-                    source: state.source,
-                    page: Some(state.page),
-                  });
-                },
-                Routes.sprintf(Router.ApiRoutes.add_excerpt()),
-                Excerpt_bs.read_t,
-              )
-              |> Js.Promise.then_(res =>
-                   (
-                     switch (res) {
-                     | Ok(excerpt) =>
-                       dispatch @@ AddExcerptRequestSucceeded(excerpt)
-                     | Error(err) =>
-                       dispatch @@
-                       AddExcerptRequestFailed(Client.errorToString(err))
-                     }
-                   )
-                   ->Js.Promise.resolve
-                 )
-              |> ignore; */
             }}>
-            {List.mapi(
-               (_i, x) =>
-                 <div
-                   className="md:flex md:items-center mb-6"
-                   key={string_of_int(_i)}>
-                   x
-                 </div>,
-               [
-                 txtInput("author", state.author, author =>
-                   dispatch @@ AuthorChanged(author)
-                 ),
-                 excerptInput,
-                 txtInput("source", state.source, author =>
-                   dispatch @@ SourceChanged(author)
-                 ),
-                 txtInput("page", state.page, author =>
-                   dispatch @@ PageChanged(author)
-                 ),
-                 submit,
-               ],
-             )
-             |> Array.of_list
-             |> React.array}
-          </form>}
+            /* Client.request(
+                 ~method_=Post,
+                 ~input={
+                   Excerpt_bs.write_t({
+                     author: state.author,
+                     excerpt: state.excerpt,
+                     source: state.source,
+                     page: Some(state.page),
+                   });
+                 },
+                 Routes.sprintf(Router.ApiRoutes.add_excerpt()),
+                 Excerpt_bs.read_t,
+               )
+               |> Js.Promise.then_(res =>
+                    (
+                      switch (res) {
+                      | Ok(excerpt) =>
+                        dispatch @@ AddExcerptRequestSucceeded(excerpt)
+                      | Error(err) =>
+                        dispatch @@
+                        AddExcerptRequestFailed(Client.errorToString(err))
+                      }
+                    )
+                    ->Js.Promise.resolve
+                  )
+               |> ignore; */
+
+              {List.mapi(
+                 (_i, x) =>
+                   <div
+                     className="md:flex md:items-center mb-6"
+                     key={string_of_int(_i)}>
+                     x
+                   </div>,
+                 [
+                   txtInput("author", state.author, author =>
+                     dispatch @@ AuthorChanged(author)
+                   ),
+                   excerptInput,
+                   txtInput("source", state.source, author =>
+                     dispatch @@ SourceChanged(author)
+                   ),
+                   txtInput("page", state.page, author =>
+                     dispatch @@ PageChanged(author)
+                   ),
+                   submit,
+                 ],
+               )
+               |> Array.of_list
+               |> React.array}
+            </form>}
        </>
      }}
   </PageContainer>;

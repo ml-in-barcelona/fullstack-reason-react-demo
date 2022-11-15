@@ -12,7 +12,12 @@ let make = (~exceprt: ExcerptT.t) => {
       <p className="mb-2"> {React.string(exceprt.excerpt)} </p>
       <cite>
         {React.string(
-           Printf.sprintf("-- %s (%s%s)", exceprt.author, exceprt.source, page),
+           Printf.sprintf(
+             "-- %s (%s%s)",
+             exceprt.author,
+             exceprt.source,
+             page,
+           ),
          )}
       </cite>
     </blockquote>
