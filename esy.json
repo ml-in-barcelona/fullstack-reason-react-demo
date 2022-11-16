@@ -8,7 +8,7 @@
     "@opam/melange": "*",
     "@opam/mel": "*",
     "ocaml": "4.14.0",
-    "native-react": "*",
+    "server-reason-react": "*",
     "react-jsx-ppx": "*"
   },
   "devDependencies": {
@@ -18,7 +18,7 @@
   "resolutions": {
     "esy-openssl": "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
     "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#e105100ebff1125b76bdff9b9b8a54e40fce1c25",
-    "native-react": "ml-in-barcelona/native-react-dom:native-react.opam#9e5d159",
+    "server-reason-react": "ml-in-barcelona/server-reason-react:server-reason-react.opam#be8b9de",
     "@opam/dune": "ocaml/dune:dune.opam#f845715375c33825e574232ad88220965511c2ef",
     "@opam/melange": "melange-re/melange:melange.opam#4675df6c53463b3cbacacea4dadadc5b1b0245ee",
     "@opam/mel": "melange-re/melange:mel.opam#4675df6c53463b3cbacacea4dadadc5b1b0245ee"

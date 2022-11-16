@@ -3,7 +3,7 @@
  (libraries
   fullstack-reason-react-demo.shared
   dream
-  native-react.react
-  native-react.reactDom)
+  server-reason-react.react
+  server-reason-react.reactDom)
  (preprocess
-  (pps native-react.ppx)))
+  (pps server-reason-react.ppx)))
