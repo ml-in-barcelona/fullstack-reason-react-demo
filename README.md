@@ -1,4 +1,4 @@
-# fullstack-react
+# fullstack-reason-react-demo
 
 <!--
 # `r-fullstack-melange`

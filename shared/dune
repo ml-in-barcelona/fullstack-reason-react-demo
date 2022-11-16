@@ -1,10 +1,11 @@
 (library
  (name shared)
+ (public_name fullstack-reason-react-demo.shared)
  (libraries
   native-react.react
   native-react.reactDom
   native-react.emotion
   native-react.reasonReactRouter)
- (wrapped false)
+ (modes melange native)
  (preprocess
   (pps native-react.ppx)))

@@ -1,28 +1,40 @@
 {
-  "name": "fullstack-melange",
+  "name": "fullstack-reason-react-demo",
   "dependencies": {
     "@opam/conf-libssl": "3",
     "@opam/dream": "1.0.0~alpha4",
-    "@opam/dune": "3.5.0",
-    "@opam/reason": "^3.8.1",
-    "melange": "melange-re/melange",
+    "@opam/dune": "3.7.0",
+    "@opam/reason": "*",
+    "@opam/melange": "*",
+    "@opam/mel": "*",
     "ocaml": "4.14.0",
     "native-react": "*",
     "react-jsx-ppx": "*"
   },
-  "devDependencies": { "@opam/ocaml-lsp-server": "*" },
+  "devDependencies": {
+    "@opam/dot-merlin-reader": "*",
+    "@opam/ocaml-lsp-server": ">= 1.12.0"
+  },
   "resolutions": {
-    "esy-openssl":
-      "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
+    "esy-openssl": "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
     "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#e105100ebff1125b76bdff9b9b8a54e40fce1c25",
-    "native-react": "ml-in-barcelona/native-react-dom:native-react.opam#9e5d159"
+    "native-react": "ml-in-barcelona/native-react-dom:native-react.opam#9e5d159",
+    "@opam/dune": "ocaml/dune:dune.opam#f845715375c33825e574232ad88220965511c2ef",
+    "@opam/melange": "melange-re/melange:melange.opam#4675df6c53463b3cbacacea4dadadc5b1b0245ee",
+    "@opam/mel": "melange-re/melange:mel.opam#4675df6c53463b3cbacacea4dadadc5b1b0245ee"
   },
   "esy": {
     "buildsInSource": "unsafe",
     "build": [
       "rm -rf node_modules/melange",
-      "ln -sfn #{melange.install} node_modules/melange",
-      "mel build"
-    ]
+      "ln -sfn #{@opam/melange.lib}/melange/runtime node_modules/melange",
+      "dune build"
+    ],
+    "buildEnv": {
+      "MELANGELIB": "#{@opam/melange.lib / 'melange'}"
+    }
+  },
+  "installConfig": {
+    "pnp": false
   }
 }

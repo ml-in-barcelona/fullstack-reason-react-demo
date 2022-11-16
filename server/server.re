@@ -8,13 +8,13 @@ module Page = {
       </head>
       <body>
         <div id="root"> <Shared.App /> </div>
-        <script src="/static/client.js" />
+        <script src="/static/bundle.js" />
       </body>
     </html>;
   };
 };
 
-let home = ReactDOM.renderToStaticMarkup(<Page />);
+let home = ReactDOM.renderToString(<Page />);
 
 let () =
   Dream.run(~port=4444) @@
