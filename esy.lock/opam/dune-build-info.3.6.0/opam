@@ -1,5 +1,5 @@
 opam-version: "2.0"
-synopsis: "Embed build informations inside executable"
+synopsis: "Embed build information inside executable"
 description: """
 The build-info library allows to access information about how the
 executable was built, such as the version of the project at which it
@@ -15,7 +15,7 @@ homepage: "https://github.com/ocaml/dune"
 doc: "https://dune.readthedocs.io/"
 bug-reports: "https://github.com/ocaml/dune/issues"
 depends: [
-  "dune" {>= "3.3"}
+  "dune" {>= "3.5"}
   "ocaml" {>= "4.08"}
   "odoc" {with-doc}
 ]
@@ -36,10 +36,10 @@ build: [
   ]
 ]
 url {
-  src: "https://github.com/ocaml/dune/releases/download/3.5.0/dune-3.5.0.tbz"
+  src: "https://github.com/ocaml/dune/releases/download/3.6.0/dune-3.6.0.tbz"
   checksum: [
-    "sha256=77bd4c6704359fae1969636cfc3cd7a517ba3604819ef89c919c0762b5093610"
-    "sha512=acaed76ab8618977118579641a1f6734ed4a225ab46494c6c5fd8e1bf9a0889e62db9adc7bd11770da602f4dd4785cef5ece4ad26512d08b64b8f3bd8954c80d"
+    "sha256=08a0c6c9521604e60cf36afba036ecf1b107df51eed14a2fb7eef6cfdd2bf278"
+    "sha512=71b94cb7cad4c6f998da5bd59fe3c6d0b4a4188896ae04aa0ffff7142ced0b93bce3a88c3b5b7b7c8c948d10ccfb2fb81fcf764aa421b595e061ac3049fa8870"
   ]
 }
-x-commit-hash: "77c1e6f8f27f57fe0c04ec1624a85069b02437cf"
+x-commit-hash: "c3b75bdfd3763b39aaac8baa5104312ac701d501"

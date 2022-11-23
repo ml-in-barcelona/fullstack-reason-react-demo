@@ -7,7 +7,7 @@ module Page = {
         <style> {Emotion.render_style_tag() |> React.string} </style>
       </head>
       <body>
-        <div id="root"> <Shared.App /> </div>
+        <div id="root"> <Shared_native.App /> </div>
         <script src="/static/bundle.js" />
       </body>
     </html>;

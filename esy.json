@@ -7,6 +7,7 @@
     "@opam/reason": "*",
     "@opam/melange": "*",
     "@opam/mel": "*",
+    "@opam/meldep": "*",
     "ocaml": "4.14.0",
     "server-reason-react": "*",
     "react-jsx-ppx": "*"
@@ -18,10 +19,11 @@
   "resolutions": {
     "esy-openssl": "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
     "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#e105100ebff1125b76bdff9b9b8a54e40fce1c25",
-    "server-reason-react": "ml-in-barcelona/server-reason-react:server-reason-react.opam#be8b9de",
-    "@opam/dune": "ocaml/dune:dune.opam#f845715375c33825e574232ad88220965511c2ef",
-    "@opam/melange": "melange-re/melange:melange.opam#4675df6c53463b3cbacacea4dadadc5b1b0245ee",
-    "@opam/mel": "melange-re/melange:mel.opam#4675df6c53463b3cbacacea4dadadc5b1b0245ee"
+    "server-reason-react": "ml-in-barcelona/server-reason-react:server-reason-react.opam#cf949069c5daf2a5a85f9de8a758c2a8041acdcd",
+    "@opam/dune": "ocaml/dune:dune.opam#bb8d6d825948eac0d89147e122580828b526deaf",
+    "@opam/melange": "melange-re/melange:melange.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c",
+    "@opam/mel": "melange-re/melange:mel.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c",
+    "@opam/meldep": "melange-re/melange:meldep.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c"
   },
   "esy": {
     "buildsInSource": "unsafe",
