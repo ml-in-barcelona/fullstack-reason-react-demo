@@ -1,4 +1,4 @@
-let className = Emotion.style([Css.Properties.display(`block)]);
+let className = Css.style([Css.display(`block)]);
 
 
 [@react.component]
