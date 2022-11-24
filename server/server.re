@@ -8,7 +8,7 @@ module Page = {
       </head>
       <body>
         <div id="root"> <Shared_native.App /> </div>
-        <script src="/static/bundle.js" />
+        <script src="/static/main.js" />
       </body>
     </html>;
   };

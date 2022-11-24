@@ -30,7 +30,7 @@
     "build": [
       "rm -rf node_modules/melange",
       "ln -sfn #{@opam/melange.lib}/melange/runtime node_modules/melange",
-      "dune build @all"
+      "dune build @client"
     ],
     "buildEnv": {
       "MELANGELIB": "#{@opam/melange.lib / 'melange'}"

@@ -3,6 +3,7 @@
 ESY = esy
 DUNE = esy dune
 MEL = esy mel
+WEBPACK = npx webpack --progress
 
 .PHONY: install
 install:
@@ -10,19 +11,23 @@ install:
 
 .PHONY: client-bundle
 client-bundle: ## Bundle the JS code
-	node bundle.mjs
+	$(WEBPACK)
 
 .PHONY: client-bundle-watch
 client-bundle-watch: ## Watch and bundle the JS code
-	node bundle.mjs --watch
+	$(WEBPACK) --watch
+
+.PHONY: client-bundle
+client-bundle-prod: ## Bundle the JS code for production
+	$(WEBPACK) --env production
 
 .PHONY: client-build
 client-build: ## Build Reason code
-	$(DUNE) build @client
+	$(ESY) build
 
 .PHONY: client-build-watch
 client-build-watch: ## Watch reason code
-	$(DUNE) build @client -w
+	$(DUNE) build -w
 
 .PHONY: server-build
 server-build: ## Build the project, including non installable libraries and executables

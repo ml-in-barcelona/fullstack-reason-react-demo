@@ -5,4 +5,4 @@
  (libraries shared_js reason_react bs_css bs_css_emotion)
  (preprocess
   (pps react-jsx-ppx.ppx))
- (module_system es6))
+ (module_system commonjs))
