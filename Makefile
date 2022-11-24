@@ -18,11 +18,11 @@ client-bundle-watch: ## Watch and bundle the JS code
 
 .PHONY: client-build
 client-build: ## Build Reason code
-	$(ESY) build
+	$(DUNE) build @client
 
 .PHONY: client-build-watch
 client-build-watch: ## Watch reason code
-	$(DUNE) build -w
+	$(DUNE) build @client -w
 
 .PHONY: server-build
 server-build: ## Build the project, including non installable libraries and executables
