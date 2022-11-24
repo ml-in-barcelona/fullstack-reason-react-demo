@@ -1,6 +1,7 @@
 {
   "name": "fullstack-reason-react-demo",
   "dependencies": {
+    "@emotion/cache": "^11.10.5",
     "@hyrious/esbuild-plugin-commonjs": "^0.2.1",
     "bs-css": "^15.3.1",
     "bs-css-emotion": "^4.3.1",

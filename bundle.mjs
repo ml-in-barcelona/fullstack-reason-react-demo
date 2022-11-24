@@ -17,8 +17,9 @@ getDependencies()
   .then((dependencies) => {
     return Esbuild.build({
       watch: isWatch,
-      entryPoints: ["client/client.js"],
+      entryPoints: ["_build/default/client/client/client/client.js"],
       outfile: "static/bundle.js",
+      target: "es2019",
       bundle: true,
       external: ["melange/lib", ...dependencies],
       plugins: [commonjs()],
