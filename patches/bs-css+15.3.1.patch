@@ -1,11 +1,12 @@
 diff --git a/node_modules/bs-css/dune b/node_modules/bs-css/dune
 new file mode 100644
-index 0000000..5f7fc68
+index 0000000..8007265
 --- /dev/null
 +++ b/node_modules/bs-css/dune
-@@ -0,0 +1,5 @@
+@@ -0,0 +1,6 @@
 +(include_subdirs unqualified)
 +
 +(library
-+ (name bs-css)
++ (name bs_css)
++ (wrapped false)
 + (modes melange))

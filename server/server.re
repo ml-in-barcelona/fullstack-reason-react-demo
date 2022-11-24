@@ -4,7 +4,7 @@ module Page = {
     <html>
       <head>
         <title> {React.string("SSR React")} </title>
-        <style> {Emotion.render_style_tag() |> React.string} </style>
+        <style> {Css.render_style_tag() |> React.string} </style>
       </head>
       <body>
         <div id="root"> <Shared_native.App /> </div>

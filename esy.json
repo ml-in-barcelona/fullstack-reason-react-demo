@@ -18,8 +18,8 @@
   },
   "resolutions": {
     "esy-openssl": "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
-    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#e105100ebff1125b76bdff9b9b8a54e40fce1c25",
-    "server-reason-react": "ml-in-barcelona/server-reason-react:server-reason-react.opam#cf949069c5daf2a5a85f9de8a758c2a8041acdcd",
+    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#f3398c4",
+    "server-reason-react": "ml-in-barcelona/server-reason-react:server-reason-react.opam#a11889f",
     "@opam/dune": "ocaml/dune:dune.opam#bb8d6d825948eac0d89147e122580828b526deaf",
     "@opam/melange": "melange-re/melange:melange.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c",
     "@opam/mel": "melange-re/melange:mel.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c",
@@ -30,7 +30,7 @@
     "build": [
       "rm -rf node_modules/melange",
       "ln -sfn #{@opam/melange.lib}/melange/runtime node_modules/melange",
-      "dune build"
+      "dune build @all"
     ],
     "buildEnv": {
       "MELANGELIB": "#{@opam/melange.lib / 'melange'}"
