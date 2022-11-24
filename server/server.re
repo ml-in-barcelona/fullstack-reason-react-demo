@@ -14,11 +14,11 @@ module Page = {
   };
 };
 
-let home = ReactDOM.renderToString(<Page />);
+let home: string = ReactDOM.renderToString(<Page />);
 
 let () =
   Dream.run(~port=4444) @@
   Dream.router([
-    Dream.get("/", _ => Dream.html(home)),
+    Dream.get("/", _request => Dream.html(home)),
     Dream.get("/static/**", Dream.static("./static")),
   ]);
