@@ -1,8 +1,7 @@
 (library
  (name shared_js)
  (modes melange)
- (libraries reason_react bs_css bs_css_emotion)
- (preprocess
-  (pps react-jsx-ppx.ppx)))
+ (flags :standard -bs-jsx 3)
+ (libraries reason_react bs_css bs_css_emotion))
 
 (copy_files# "../*.re")
