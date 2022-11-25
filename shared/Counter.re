@@ -2,15 +2,13 @@
 let make = () => {
   let (count, setCount) = React.useState(() => 23);
 
-  let increment = _event => {
+  let increment = event => {
+    let _target = ReactEvent.Mouse.target(event);
+    Js.Console.log("Console works too! " /* ++ target##value */);
     setCount(_ => count + 1);
   };
 
-  <div
-    className={Css.style([
-      Css.color(Css.whitesmoke),
-      Css.marginTop(`rem(1.5)),
-    ])}>
+  <div className={Css.style([Css.color(Css.whitesmoke)])}>
     <div
       className={Css.style([
         Css.display(`flex),
