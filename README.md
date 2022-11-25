@@ -76,3 +76,4 @@ until we can extract from Melange how to handle it, it might remain like this (b
 - `server-reason-react.css` needs a better hashing and ideally match the OCaml implementation with the JS implementation. For now, we can make it just better, since some combinations of styles are not hashed with the same result.
 - Can't run 2 dune build --watch from the same directory, and it's a bit annoying to have to exec the executable each time. I fixed by adding wathexec (and couldn't setup [dream-livereload](https://github.com/tmattio/dream-livereload) because dune-lang was not 3.6)
 - For now everything is patched to specific versions from Github hashes since most tools are under development. Check [esy.json](./esy.json)
+- Other problems were expected and are tackled [here](https://github.com/ml-in-barcelona/server-reason-react/blob/main/TODOS.md)
