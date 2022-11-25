@@ -1,0 +1,6 @@
+(include_subdirs unqualified)
+
+(library
+ (name reason_react)
+ (wrapped false)
+ (modes melange))
