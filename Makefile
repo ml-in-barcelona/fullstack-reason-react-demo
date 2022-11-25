@@ -6,8 +6,9 @@ MEL = esy mel
 WEBPACK = npx webpack --progress
 
 .PHONY: install
-install:
+install: ## Install dependencies from @opam, github and NPM repository
 	$(ESY) install
+	npm install
 
 .PHONY: client-bundle
 client-bundle: ## Bundle the JS code
