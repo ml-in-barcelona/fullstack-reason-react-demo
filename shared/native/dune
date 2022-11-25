@@ -4,8 +4,9 @@
  (libraries
   server-reason-react.react
   server-reason-react.reactDom
+  server-reason-react.js
   server-reason-react.css)
  (preprocess
-  (pps server-reason-react.pipe_first_ppx server-reason-react.ppx)))
+  (pps server-reason-react.ppx)))
 
 (copy_files# "../*.re")

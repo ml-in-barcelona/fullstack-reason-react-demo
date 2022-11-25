@@ -45,6 +45,13 @@ server-start: ## Start the server
 server-dev: ## Build in watch mode
 	$(DUNE) build -w @@default
 
+.PHONY: dev
+dev: ## Start the server in dev mode
+	@watchexec \
+		-w client -w server -w shared \
+		--exts re,rei,ml,mli -r -c \
+		"$(MAKE) client-build; $(MAKE) server-build; $(MAKE) server-start"
+
 .PHONY: clean
 clean: ## Clean artifacts
 	$(DUNE) clean

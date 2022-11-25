@@ -2,5 +2,9 @@
   "ocaml.sandbox": {
     "kind": "esy",
     "root": "${workspaceFolder:fullstack-reason-react-demo}"
-  }
+  },
+  "[reason]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ocamllabs.ocaml-platform"
+  },
 }
