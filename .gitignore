@@ -5,13 +5,7 @@ node_modules/
 _build/
 _esy/
 .melange.eobjs/
-dune.mel
-/dune
 
-client/*.js
-shared/*.js
-
-# esbuild.
 static/
 
 .merlin

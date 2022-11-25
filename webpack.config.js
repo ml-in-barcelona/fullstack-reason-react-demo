@@ -7,4 +7,9 @@ module.exports = (env) => ({
     path: Path.join(__dirname, "static"),
     filename: "main.js",
   },
+  resolve: {
+    alias: {
+      melange: Path.resolve(__dirname, "node_modules/melange"),
+    },
+  },
 });

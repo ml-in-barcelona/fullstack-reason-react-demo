@@ -17,7 +17,7 @@ module Page = {
 let home: string = ReactDOM.renderToString(<Page />);
 
 let () =
-  Dream.run(~port=4444) @@
+  Dream.run(~port=3331) @@
   Dream.router([
     Dream.get("/", _request => Dream.html(home)),
     Dream.get("/static/**", Dream.static("./static")),
