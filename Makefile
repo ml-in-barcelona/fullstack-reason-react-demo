@@ -1,34 +1,33 @@
-project_name = fullstack-react
+.DEFAULT_GOAL := help
 
+ESY = esy
 DUNE = esy dune
 MEL = esy mel
-
-.PHONY: help
-help: ## Print this help message
-	@echo "List of available make commands";
-	@echo "";
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}';
-	@echo "";
+WEBPACK = npx webpack --progress
 
 .PHONY: install
 install:
-	esy install
+	$(ESY) install
 
 .PHONY: client-bundle
 client-bundle: ## Bundle the JS code
-	$(ESY) esbuild _build/default/client/client.js --bundle --outfile=static/--external:melange/lib client.js
+	$(WEBPACK)
 
 .PHONY: client-bundle-watch
 client-bundle-watch: ## Watch and bundle the JS code
-	esy esbuild _build/default/client/client.js --bundle --outfile=static/client.js --external:melange/lib --watch
+	$(WEBPACK) --watch
+
+.PHONY: client-bundle
+client-bundle-prod: ## Bundle the JS code for production
+	$(WEBPACK) --env production
 
 .PHONY: client-build
 client-build: ## Build Reason code
-	$(MEL) build
+	$(ESY) build
 
 .PHONY: client-build-watch
 client-build-watch: ## Watch reason code
-	$(MEL) build --watch
+	$(DUNE) build -w
 
 .PHONY: server-build
 server-build: ## Build the project, including non installable libraries and executables
@@ -46,6 +45,13 @@ server-start: ## Start the server
 server-dev: ## Build in watch mode
 	$(DUNE) build -w @@default
 
+.PHONY: dev
+dev: ## Start the server in dev mode
+	@watchexec \
+		-w client -w server -w shared \
+		--exts re,rei,ml,mli -r -c \
+		"$(MAKE) client-build; $(MAKE) server-build; $(MAKE) server-start"
+
 .PHONY: clean
 clean: ## Clean artifacts
 	$(DUNE) clean
@@ -57,3 +63,11 @@ format: ## Format the codebase with ocamlformat/refmt
 .PHONY: format-check
 format-check: ## Checks if format is correct
 	$(DUNE) build @fmt
+
+.PHONY: help
+help: ## Print this help message
+	@echo "";
+	@echo "List of available make commands:";
+	@echo "";
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}';
+	@echo "";
