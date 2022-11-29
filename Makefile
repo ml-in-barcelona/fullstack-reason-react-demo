@@ -82,9 +82,9 @@ commit:
 
 .PHONY: docker-build
 docker-build: ## docker build
-	docker build . --tag "$(name):$(current_hash)" --platform linux/x86_64 --progress=plain
+	docker build . --tag "$(name):$(current_hash)" --platform linux/amd64 --progress=plain
 
 .PHONY: docker-run
 docker-run: ## docker run
-	docker run -d --platform linux/x86_64 \
+	docker run -d --platform linux/amd64 \
 	$(name):$(current_hash)
