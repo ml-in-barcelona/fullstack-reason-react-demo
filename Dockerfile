@@ -10,7 +10,8 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Install esy dependencies
-ADD esy.* .
+ADD esy.json esy.json
+ADD esy.lock/ esy.lock/
 RUN node_modules/.bin/esy solve
 RUN node_modules/.bin/esy fetch
 RUN node_modules/.bin/esy build-dependencies
