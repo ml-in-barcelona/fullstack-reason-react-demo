@@ -1,7 +1,12 @@
 name: Deploy on fly.io
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
