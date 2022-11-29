@@ -38,8 +38,8 @@ RUN apk update && apk add --update libev gmp git
 RUN chmod -R 755 /var
 
 # Copy server binary
-COPY --from=build /build/_build/default/server/server.exe /bin/server
+COPY --from=build /build/_build/default/server/server.exe /bin/server.exe
 # Copy client artifacts
 COPY --from=build /build/static /static
 
-ENTRYPOINT /bin/server
+CMD ["/bin/server.exe"]
