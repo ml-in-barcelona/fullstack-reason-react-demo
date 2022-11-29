@@ -43,7 +43,7 @@ module Page = {
 let home: string = ReactDOM.renderToStaticMarkup(<Page />);
 
 let () =
-  Dream.run(~port=3331) @@
+  Dream.run(~port=8080) @@
   Dream.router([
     Dream.get("/", _request => Dream.html(home)),
     Dream.get("/static/**", Dream.static("./static")),
