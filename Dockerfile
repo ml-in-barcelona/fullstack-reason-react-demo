@@ -12,12 +12,10 @@ ENV NPM_CONFIG_PREFIX=/esy
 RUN npm install esy@0.6.12
 
 # Alpine image where
-FROM alpine:3.8 as esy
+FROM node:16.3-alpine3.12 as esy
 
 ENV TERM=dumb
 ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/lib
-
-WORKDIR /
 
 COPY --from=build /esy /esy
 
