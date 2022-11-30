@@ -1,0 +1,10 @@
+.git/
+
+node_modules/
+
+_build/
+_esy/
+.merlin
+
+static/
+

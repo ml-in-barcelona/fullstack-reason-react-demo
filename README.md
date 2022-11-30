@@ -1,9 +1,10 @@
 # fullstack-reason-react-demo
 
-> Warning: This repo is in constant flux as I'm polishing the experience with `server-reason-react` and related libraries. If you are interested in this, please contact me on [Twitter](https://www.twitter.com/davesnx) or open an issue.
+> **Warning**
+> This repo is in constant flux as I'm polishing the experience with `server-reason-react` and related libraries. If you are interested in this you can follow the progress in my [Twitter](https://www.twitter.com/davesnx) or contact me.
 
-This repo is a demo of a fullstack reason-react app using Melange and Dream, which means
-all code is written in Reason and compiled by both [Melange](https://github.com/melange-re/melange) and OCaml.
+A demo of a fullstack reason-react app using Melange and Dream, which means
+all code is written in Reason and compiled by both [Melange](https://github.com/melange-re/melange) and OCaml. Showcasing server-reason-react.
 
 It uses dune to build the project and esy/npm for the dependencies.
 
@@ -69,10 +70,8 @@ The code of shared consist of an app to demostrate a few usages of server-reason
 
 ## Problems
 
-- **editor support**. Currently there's no editor support in the `shared` folder. Haven't played much with it and I'm not sure if is doable to have proper support with `copy_files`. Other methods of compilation (vlib) can have better support. After https://github.com/ocaml/dune/pull/6476 it should be smooth.
+- **editor support**. Currently there's no editor support in the `shared` folder. Haven't played much with it and I'm not sure if is doable to have proper support with `copy_files`. Other methods of compilation (vlib) can have better support. After [ocaml/dune/pull/6476](https://github.com/ocaml/dune/pull/6476) it should be smooth.
 - pipe first (`->`) is implemented as a transformation by [server-reason-react.pipe_first_ppx](https://github.com/ml-in-barcelona/server-reason-react/blob/main/lib/shims/ppx/pipe_first.ml) but it takes too long to compile and hangs sometimes, there's probably a bug in the implementation.
-- Js from ReScript, we don't have it in native. For now `Js.t ({..})` I treat it as an OCaml object and the ppx [server-reason-react.double_hash](https://github.com/ml-in-barcelona/server-reason-react/blob/main/lib/shims/ppx/double_hash.ml) transforms `a##b` to `a#b`. This causes a few problems: For example ReactEvent.ml API relies on `Js.t` and I needed to change to handle an empty object, but I can't access any property unless I type them all (which I could, but doesn't seem ideal).
-until we can extract from Melange how to handle it, it might remain like this (broken in most places) or not being an option for now.
-- `server-reason-react.css` needs a better hashing and ideally match the OCaml implementation with the JS implementation. For now, we can make it just better, since some combinations of styles are not hashed with the same result.
-- Can't run 2 dune build --watch from the same directory, and it's a bit annoying to have to exec the executable each time. I fixed by adding wathexec (and couldn't setup [dream-livereload](https://github.com/tmattio/dream-livereload) because dune-lang was not 3.6)
-- For now everything is patched to specific versions from Github hashes since most tools are under development. Check [esy.json](./esy.json)
+- Js from ReScript isn't availables in native. For now `Js.t ({..})` are treated as a OCaml object and for accessing to properties with double hash (`##`) we have the ppx [server-reason-react.double_hash](https://github.com/ml-in-barcelona/server-reason-react/blob/main/lib/shims/ppx/double_hash.ml) which transforms `a##b` to `a#b`. This causes a few problems: ReactEvent.ml API relies on `Js.t` and I needed to change to handle an empty object, but I can't access any property unless I type them all (which I could, but doesn't seem ideal).
+Until we can extract from Melange how to handle it, it might remain like this (broken in most places) or not being an option for now.
+- For now (dune, Melange, server-reason-react) are patched to specific versions from Github commit hashes since most tools are under development and not published. Check [esy.json](./esy.json) for exact versions.
