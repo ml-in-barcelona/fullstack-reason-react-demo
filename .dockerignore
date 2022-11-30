@@ -1,11 +1,10 @@
-# npm.
+.git/
+
 node_modules/
 
-# Melange, Dune.
 _build/
 _esy/
-.melange.eobjs/
+.merlin
 
 static/
 
-.merlin
