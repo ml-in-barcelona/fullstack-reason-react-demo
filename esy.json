@@ -1,7 +1,6 @@
 {
   "name": "fullstack-reason-react-demo",
   "dependencies": {
-    "@emotion/cache": "^11.10.5",
     "@opam/conf-libssl": "3",
     "@opam/dream": "1.0.0~alpha4",
     "@opam/dune": "3.7.0",
@@ -10,29 +9,21 @@
     "@opam/meldep": "*",
     "@opam/reason": "*",
     "react-jsx-ppx": "*",
-    "server-reason-react": "*",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1"
+    "server-reason-react": "*"
   },
   "devDependencies": {
     "@opam/dot-merlin-reader": "*",
     "@opam/ocaml-lsp-server": ">= 1.12.0"
   },
   "resolutions": {
-    "esy-openssl":
-      "esy-packages/esy-openssl#619ae2d46ca981ec26ab3287487ad98b157a01d1",
-    "react-jsx-ppx":
-      "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#f3398c4",
+    "esy-openssl": "esy-packages/esy-openssl#619ae2d",
+    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465",
     "server-reason-react":
-      "ml-in-barcelona/server-reason-react:server-reason-react.opam#02950c3",
-    "@opam/dune":
-      "ocaml/dune:dune.opam#bb8d6d825948eac0d89147e122580828b526deaf",
-    "@opam/melange":
-      "melange-re/melange:melange.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c",
-    "@opam/mel":
-      "melange-re/melange:mel.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c",
-    "@opam/meldep":
-      "melange-re/melange:meldep.opam#81bd400817bb7d27c8ba257a8c5ec51c3b3e196c"
+      "ml-in-barcelona/server-reason-react:server-reason-react.opam#09a4793",
+    "@opam/dune": "ocaml/dune:dune.opam#bb8d6d8",
+    "@opam/melange": "melange-re/melange:melange.opam#81bd400",
+    "@opam/mel": "melange-re/melange:mel.opam#81bd400",
+    "@opam/meldep": "melange-re/melange:meldep.opam#81bd400"
   },
   "esy": {
     "buildsInSource": "unsafe",

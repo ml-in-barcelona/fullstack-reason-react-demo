@@ -2105,4 +2105,9 @@ include Props;
 // React.createElement(ReactDOM.stringToComponent(multiline ? "textarea" : "input"), ...)
 external stringToComponent: string => React.component(domProps) = "%identity";
 
+[@bs.variadic] [@bs.module "react"]
+external createDOMElementVariadic:
+  (string, ~props: domProps=?, array(React.element)) => React.element =
+  "createElement";
+
 module Style = ReactDOMStyle;

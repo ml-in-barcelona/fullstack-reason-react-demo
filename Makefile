@@ -30,7 +30,7 @@ client-build: ## Build Reason code
 
 .PHONY: client-build-watch
 client-build-watch: ## Watch reason code
-	$(DUNE) build -w
+	$(DUNE) build -w @client
 
 .PHONY: server-build
 server-build: ## Build the project, including non installable libraries and executables
