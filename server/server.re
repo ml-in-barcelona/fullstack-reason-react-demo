@@ -22,7 +22,7 @@ module Page = {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         />
-        <title> {React.string("Demo with Server Reason React")} </title>
+        <title> {React.string("Server Reason React demo")} </title>
         <link
           rel="shortcut icon"
           href="https://reasonml.github.io/img/icon_50.png"
@@ -43,7 +43,7 @@ module Page = {
 let home: string = ReactDOM.renderToStaticMarkup(<Page />);
 
 let () =
-  Dream.run(~port=3331) @@
+  Dream.run(~port=8080, ~interface="0.0.0.0") @@
   Dream.router([
     Dream.get("/", _request => Dream.html(home)),
     Dream.get("/static/**", Dream.static("./static")),
