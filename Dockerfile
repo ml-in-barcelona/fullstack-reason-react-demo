@@ -9,7 +9,7 @@ RUN mkdir /esy
 WORKDIR /esy
 
 ENV NPM_CONFIG_PREFIX=/esy
-RUN npm install esy@0.6.12
+RUN npm install -g esy@0.6.12
 
 # Alpine image where
 FROM node:16.3-alpine3.12 as esy
@@ -36,9 +36,10 @@ RUN npm ci --only=production
 # Install esy dependencies
 ADD esy.json esy.json
 ADD esy.lock/ esy.lock/
-RUN node_modules/.bin/esy solve
-RUN node_modules/.bin/esy fetch
-RUN node_modules/.bin/esy build-dependencies
+RUN esy --version
+RUN esy solve
+RUN esy fetch
+RUN esy build-dependencies
 
 # Copy the project (move folder by folder instead of COPY . . to not override _esy folder)
 COPY client/ client/
@@ -50,11 +51,11 @@ COPY dune-project dune-project
 COPY webpack.config.js webpack.config.js
 
 # Build client
-RUN node_modules/.bin/esy build
+RUN esy build
 # Bundle client
 RUN node_modules/.bin/webpack
 # Build server
-RUN node_modules/.bin/esy dune build --profile=prod @@default
+RUN esy dune build --profile=prod @@default
 
 FROM alpine:3.12 as run
 
@@ -63,8 +64,8 @@ RUN apk update && apk add --update libev gmp git
 RUN chmod -R 755 /var
 
 # Copy server binary
-COPY --from=build /app/_build/default/server/server.exe /bin/server.exe
+COPY --from=esy /app/_build/default/server/server.exe /bin/server.exe
 # Copy client artifacts
-COPY --from=build /app/static /static
+COPY --from=esy /app/static /static
 
 CMD ["/bin/server.exe"]
