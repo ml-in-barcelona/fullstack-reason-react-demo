@@ -1,5 +1,5 @@
 {
-  "checksum": "6089ff74dcdb9ef8ccbf3fc85e130ef3",
+  "checksum": "9e54c3f0fafce129487b8b29583c9c1c",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -18,16 +18,16 @@
       "dependencies": [],
       "devDependencies": []
     },
-    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#09a4793@d41d8cd9": {
+    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#d2389a3@d41d8cd9": {
       "id":
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#09a4793@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#d2389a3@d41d8cd9",
       "name": "server-reason-react",
       "version":
-        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#09a4793",
+        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#d2389a3",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#09a4793"
+          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#d2389a3"
         ]
       },
       "overrides": [],
@@ -89,7 +89,7 @@
       "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
       "overrides": [],
       "dependencies": [
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#09a4793@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#d2389a3@d41d8cd9",
         "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465@d41d8cd9",
         "@opam/reason@opam:3.8.1@694249e6",
         "@opam/meldep@github:melange-re/melange:meldep.opam#81bd400@d41d8cd9",
