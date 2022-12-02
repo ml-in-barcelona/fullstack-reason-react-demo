@@ -42,9 +42,10 @@ module Page = {
 
 let home: string = ReactDOM.renderToStaticMarkup(<Page />);
 
-let () =
-  Dream.run(~port=8080, ~interface="0.0.0.0") @@
+let handler =
   Dream.router([
     Dream.get("/", _request => Dream.html(home)),
     Dream.get("/static/**", Dream.static("./static")),
   ]);
+
+Dream.run(~port=8080, ~interface="0.0.0.0", handler);
