@@ -19,3 +19,5 @@
   (libraries bs_css)
   (wrapped false)
   (modes melange)))
+
+(subdir static)

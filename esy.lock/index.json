@@ -1,5 +1,5 @@
 {
-  "checksum": "f5c424da2888da62d865c96e3fa2b735",
+  "checksum": "24f431bb4121f6d4f513e32f9316df71",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -33,38 +33,38 @@
       "overrides": [],
       "dependencies": [
         "ocaml@4.14.0@d41d8cd9", "@opam/reason@opam:3.8.1@694249e6",
-        "@opam/ppxlib@opam:0.27.0@08d8f65d",
+        "@opam/ppxlib@opam:0.28.0@8c51d241",
         "@opam/dune@github:ocaml/dune:dune.opam#bb8d6d8@d41d8cd9",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
         "ocaml@4.14.0@d41d8cd9", "@opam/reason@opam:3.8.1@694249e6",
-        "@opam/ppxlib@opam:0.27.0@08d8f65d",
+        "@opam/ppxlib@opam:0.28.0@8c51d241",
         "@opam/dune@github:ocaml/dune:dune.opam#bb8d6d8@d41d8cd9"
       ]
     },
-    "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465@d41d8cd9": {
+    "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f@d41d8cd9": {
       "id":
-        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465@d41d8cd9",
+        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f@d41d8cd9",
       "name": "react-jsx-ppx",
       "version":
-        "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465",
+        "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465"
+          "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f"
         ]
       },
       "overrides": [],
       "dependencies": [
         "ocaml@4.14.0@d41d8cd9", "@opam/reason@opam:3.8.1@694249e6",
-        "@opam/ppxlib@opam:0.27.0@08d8f65d",
+        "@opam/ppxlib@opam:0.28.0@8c51d241",
         "@opam/dune@github:ocaml/dune:dune.opam#bb8d6d8@d41d8cd9",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
         "ocaml@4.14.0@d41d8cd9", "@opam/reason@opam:3.8.1@694249e6",
-        "@opam/ppxlib@opam:0.27.0@08d8f65d",
+        "@opam/ppxlib@opam:0.28.0@8c51d241",
         "@opam/dune@github:ocaml/dune:dune.opam#bb8d6d8@d41d8cd9"
       ]
     },
@@ -90,7 +90,7 @@
       "overrides": [],
       "dependencies": [
         "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#fa50cab@d41d8cd9",
-        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465@d41d8cd9",
+        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f@d41d8cd9",
         "@opam/reason@opam:3.8.1@694249e6",
         "@opam/meldep@github:melange-re/melange:meldep.opam#81bd400@d41d8cd9",
         "@opam/melange@github:melange-re/melange:melange.opam#81bd400@d41d8cd9",
@@ -712,20 +712,20 @@
         "@opam/bigarray-overlap@opam:0.2.1@9bde8734"
       ]
     },
-    "@opam/ppxlib@opam:0.27.0@08d8f65d": {
-      "id": "@opam/ppxlib@opam:0.27.0@08d8f65d",
+    "@opam/ppxlib@opam:0.28.0@8c51d241": {
+      "id": "@opam/ppxlib@opam:0.28.0@8c51d241",
       "name": "@opam/ppxlib",
-      "version": "opam:0.27.0",
+      "version": "opam:0.28.0",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://opam.ocaml.org/cache/sha256/76/764b96121d6ffd6a73820e0ec5235176bfc42b94cf2ff97e32d068a5c4b28c62#sha256:764b96121d6ffd6a73820e0ec5235176bfc42b94cf2ff97e32d068a5c4b28c62",
-          "archive:https://github.com/ocaml-ppx/ppxlib/releases/download/0.27.0/ppxlib-0.27.0.tbz#sha256:764b96121d6ffd6a73820e0ec5235176bfc42b94cf2ff97e32d068a5c4b28c62"
+          "archive:https://opam.ocaml.org/cache/sha256/d8/d87ae5f9a081206308ca964809b50a66aeb8e83d254801e8b9675448b60cf377#sha256:d87ae5f9a081206308ca964809b50a66aeb8e83d254801e8b9675448b60cf377",
+          "archive:https://github.com/ocaml-ppx/ppxlib/releases/download/0.28.0/ppxlib-0.28.0.tbz#sha256:d87ae5f9a081206308ca964809b50a66aeb8e83d254801e8b9675448b60cf377"
         ],
         "opam": {
           "name": "ppxlib",
-          "version": "0.27.0",
-          "path": "esy.lock/opam/ppxlib.0.27.0"
+          "version": "0.28.0",
+          "path": "esy.lock/opam/ppxlib.0.28.0"
         }
       },
       "overrides": [],
@@ -1675,13 +1675,13 @@
       },
       "overrides": [],
       "dependencies": [
-        "ocaml@4.14.0@d41d8cd9", "@opam/ppxlib@opam:0.27.0@08d8f65d",
+        "ocaml@4.14.0@d41d8cd9", "@opam/ppxlib@opam:0.28.0@8c51d241",
         "@opam/lwt@opam:5.6.1@2a9902ab",
         "@opam/dune@github:ocaml/dune:dune.opam#bb8d6d8@d41d8cd9",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
-        "ocaml@4.14.0@d41d8cd9", "@opam/ppxlib@opam:0.27.0@08d8f65d",
+        "ocaml@4.14.0@d41d8cd9", "@opam/ppxlib@opam:0.28.0@8c51d241",
         "@opam/lwt@opam:5.6.1@2a9902ab",
         "@opam/dune@github:ocaml/dune:dune.opam#bb8d6d8@d41d8cd9"
       ]

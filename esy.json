@@ -17,7 +17,7 @@
   },
   "resolutions": {
     "esy-openssl": "esy-packages/esy-openssl#619ae2d",
-    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#534a465",
+    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f",
     "server-reason-react":
       "ml-in-barcelona/server-reason-react:server-reason-react.opam#fa50cab",
     "@opam/dune": "ocaml/dune:dune.opam#bb8d6d8",
