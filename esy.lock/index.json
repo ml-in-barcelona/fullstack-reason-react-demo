@@ -1,5 +1,5 @@
 {
-  "checksum": "24f431bb4121f6d4f513e32f9316df71",
+  "checksum": "ebde4e3173dc2e0ae49de441af3cfdd1",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -43,16 +43,16 @@
         "@opam/dune@github:ocaml/dune:dune.opam#bb8d6d8@d41d8cd9"
       ]
     },
-    "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f@d41d8cd9": {
+    "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#d02e573@d41d8cd9": {
       "id":
-        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f@d41d8cd9",
+        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#d02e573@d41d8cd9",
       "name": "react-jsx-ppx",
       "version":
-        "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f",
+        "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#d02e573",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f"
+          "github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#d02e573"
         ]
       },
       "overrides": [],
@@ -90,7 +90,7 @@
       "overrides": [],
       "dependencies": [
         "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#fa50cab@d41d8cd9",
-        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#1a56b9f@d41d8cd9",
+        "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#d02e573@d41d8cd9",
         "@opam/reason@opam:3.8.1@694249e6",
         "@opam/meldep@github:melange-re/melange:meldep.opam#81bd400@d41d8cd9",
         "@opam/melange@github:melange-re/melange:melange.opam#81bd400@d41d8cd9",

@@ -41,11 +41,11 @@ module Layout = {
 let make = () => {
   <div className={Css.style([Css.padding(`rem(2.))])}>
     <Layout>
-      <>
+      <div>
         <Wrapper> <Header /> </Wrapper>
         <Hr />
         <Wrapper> <Counter /> </Wrapper>
-      </>
+      </div>
     </Layout>
   </div>;
 };
