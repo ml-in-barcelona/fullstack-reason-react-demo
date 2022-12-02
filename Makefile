@@ -58,6 +58,7 @@ dev: ## Start the server in dev mode
 .PHONY: clean
 clean: ## Clean artifacts
 	$(DUNE) clean
+	rm -rf static/
 
 .PHONY: format
 format: ## Format the codebase with ocamlformat/refmt
