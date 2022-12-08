@@ -27,10 +27,14 @@ module Page = {
           rel="shortcut icon"
           href="https://reasonml.github.io/img/icon_50.png"
         />
-        <style type_="text/css"> {globalStyles |> React.string} </style>
-        <style type_="text/css">
-          {Css.render_style_tag() |> React.string}
-        </style>
+        <style
+          type_="text/css"
+          dangerouslySetInnerHTML={"__html": globalStyles}
+        />
+        <style
+          type_="text/css"
+          dangerouslySetInnerHTML={"__html": Css.render_style_tag()}
+        />
       </head>
       <body>
         <div id="root"> <Shared_native.App /> </div>

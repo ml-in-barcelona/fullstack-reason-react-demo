@@ -18,19 +18,19 @@ module Menu = {
       {label: "About", link: "https://twitter.com/davesnx"},
     |];
 
-    <ul
+    <div
       className={Css.style([
         Css.display(`flex),
         Css.alignItems(`center),
         Css.justifyContent(`left),
         Css.unsafe("gap", "1rem"),
-        Css.unsafe("list-style", "none"),
-        Css.margin(`zero),
-        Css.padding(`zero),
+        Css.marginTop(`rem(0.5)),
       ])}>
       {React.array(
          Belt.Array.mapWithIndex(data, (key, item) =>
-           <li key={Int.to_string(key)}>
+           <div
+             className={Css.style([Css.display(`block)])}
+             key={Int.to_string(key)}>
              <a
                href={item.link}
                target="_blank"
@@ -41,10 +41,10 @@ module Menu = {
                ])}>
                {React.string(item.label)}
              </a>
-           </li>
+           </div>
          ),
        )}
-    </ul>;
+    </div>;
   };
 };
 

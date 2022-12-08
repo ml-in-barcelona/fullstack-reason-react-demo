@@ -1,5 +1,5 @@
 {
-  "checksum": "3f70614bd937be9cd788d6328c1b651b",
+  "checksum": "24407d5dff1498e8a44709bb06ea1a48",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -18,16 +18,16 @@
       "dependencies": [],
       "devDependencies": []
     },
-    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#0a6d271@d41d8cd9": {
+    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#4bf743b02a6be8b6d4017406b1a881923c6e47d5@d41d8cd9": {
       "id":
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#0a6d271@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#4bf743b02a6be8b6d4017406b1a881923c6e47d5@d41d8cd9",
       "name": "server-reason-react",
       "version":
-        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#0a6d271",
+        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#4bf743b02a6be8b6d4017406b1a881923c6e47d5",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#0a6d271"
+          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#4bf743b02a6be8b6d4017406b1a881923c6e47d5"
         ]
       },
       "overrides": [],
@@ -89,7 +89,7 @@
       "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
       "overrides": [],
       "dependencies": [
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#0a6d271@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#4bf743b02a6be8b6d4017406b1a881923c6e47d5@d41d8cd9",
         "react-jsx-ppx@github:ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#73a498b@d41d8cd9",
         "@opam/reason@opam:3.8.1@694249e6",
         "@opam/meldep@github:melange-re/melange:meldep.opam#81bd400@d41d8cd9",
