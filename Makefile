@@ -8,7 +8,7 @@ current_hash = $(shell git rev-parse HEAD | cut -c1-7)
 name = fullstack-reason-react-demo
 
 .PHONY: install
-install: ## Install dependencies from @opam, github and NPM repository
+install: ## Install dependencies from esy.json and package.json
 	$(ESY) install
 	npm install
 

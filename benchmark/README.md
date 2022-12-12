@@ -6,18 +6,12 @@ compiled JS from the `shared` directory in `node-express-rescript`.
 
 The app consists in 5 simple nested components.
 
-- `node-express-rescript`: Nodejs with Express running JS via Melange app
-- `node-express-js` Nodejs with Express running JS app
-- `bun-js` Bun with JS app
-- `server` OCaml with Dream running server-reason-react app
+- `node-express-rescript`: Nodejs with Express running the JavaScript app's version compiled by Melange (containing Belt, ReScript stdlib and some React leftovers from the compilation)
+- `node-express-js` Nodejs with Express running the JavaScript app's version (cleanup done by hand)
+- `bun-js` Bun with JavaScript app's version (cleanup done by hand)
+- `dream-reason-native` OCaml with Dream running server-reason-react app
 
 ## Running the benchmark
-
-Requirements:
-
-- node
-- bun
-- wrk
 
 Command to run `wrk -t12 -c400 -d30s http://localhost:xxxx`
 
@@ -65,7 +59,7 @@ Requests/sec:  10464.64
 Transfer/sec:      8.55MB
 ```
 
-### server
+### dream-reason-native
 
   ```make server-start```
 
