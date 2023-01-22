@@ -13,7 +13,7 @@ Mtime has a no dependency. Mtime_clock depends on your system library
 or JavaScript runtime system. Mtime and its libraries are distributed
 under the ISC license.
 
-Home page: http://erratique.ch/software/mtime"""
+Home page: <http://erratique.ch/software/mtime>"""
 maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
 authors: "The mtime programmers"
 license: "ISC"
@@ -30,7 +30,7 @@ depends: [
 build: ["ocaml" "pkg/pkg.ml" "build" "--dev-pkg" "%{dev}%"]
 dev-repo: "git+https://erratique.ch/repos/mtime.git"
 url {
-  src: "https://erratique.ch/software/mtime/releases/mtime-1.4.0.tbz"
+  src: "https://erratique.ch/software/mtime/releases/mtime-2.0.0.tbz"
   checksum:
-    "sha512=0492fa5f5187b909fe2b0550363c7dcb8cffef963d51072272ef3d876b51e1ddf8de4c4e221cffb0144658fccf6a0dc584a5c8094a4b2208156e43bad5b269d4"
+    "sha512=2ebec45218901c08f73420aa3318c506f155b6c0df713e9856682e59d3246696821ea477ce3682af0bf4cafd0491b1d66904f8c0256e2cf831e93a0aea322f04"
 }

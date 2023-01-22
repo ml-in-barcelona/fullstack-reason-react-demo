@@ -44,7 +44,7 @@ module Page = {
   };
 };
 
-let home: string = ReactDOM.renderToStaticMarkup(<Page />);
+let home: string = ReactDOM.renderToString(<Page />);
 
 let handler =
   Dream.router([

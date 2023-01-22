@@ -9,7 +9,8 @@ module.exports = (env) => ({
   },
   resolve: {
     alias: {
-      melange: Path.resolve(__dirname, "node_modules/melange"),
+      melange: Path.resolve(__dirname, "node_modules", "melange"),
+      ["@emotion/hash"]: Path.resolve(__dirname, "client", "hash.js"),
     },
   },
 });
