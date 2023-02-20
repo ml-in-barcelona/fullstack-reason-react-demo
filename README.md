@@ -1,7 +1,7 @@
 # fullstack-reason-react-demo
 
 > **Warning**
-> This repo is in constant flux as I'm polishing the experience with `server-reason-react` and related libraries. If you are interested in this you can follow the progress in my [Twitter](https://www.twitter.com/davesnx) or contact me.
+> This repo is in constant flux as I'm polishing the experience with `server-reason-react` and related libraries. If you are interested in this you can contact me in[Twitter](https://www.twitter.com/davesnx).
 
 A demo of a fullstack reason-react app using Melange and Dream, which means
 all code is written in Reason and compiled by both [Melange](https://github.com/melange-re/melange) and OCaml. Showcasing server-reason-react.
