@@ -1,3 +1,7 @@
+/* This is a file manually copied from the compilation of server-reason-react with melange.emit. In the future bs_css and bs_css_emotion might contain this function so this file can be a dependency.*/
+
+/* It gets injected to @emotion/hash via webpack */
+
 "use strict";
 
 var $$String = require("melange/stdlib_modules/string.js");
