@@ -30,10 +30,10 @@ structures directly from OCaml.  It supports both reading and writing to these
 structures, and they are accessed via the `Bigarray` module."""
 url {
   src:
-    "https://github.com/mirage/ocaml-cstruct/releases/download/v6.1.1/cstruct-6.1.1.tbz"
+    "https://github.com/mirage/ocaml-cstruct/releases/download/v6.2.0/cstruct-6.2.0.tbz"
   checksum: [
-    "sha256=1b74f9870f6a7ee6008924590716dd533a728a3ca10bb18da9fea8be467f518d"
-    "sha512=6fdd4517436c501ff0f39088eb0c3ea18e93370e020fa4d10dbf7aad29f1ee9cef881d52499f02c738e8aa0d78b568622a793c68f50ef51f282ee03160171317"
+    "sha256=9a78073392580e8349148fa3ab4b1b2e989dc9d30d07401b04c96b7c60f03e62"
+    "sha512=8d33fe6b3707a3994d0225cd33cadde0bb2ca834ef01096e3df33a08e4a8c6d02ebccddf558a73988b8a5595b65fdc10de61efbf872c6c9e55c719c7e19c463d"
   ]
 }
-x-commit-hash: "b14e6a336a8dff2a37ebda56d075feda5956593d"
+x-commit-hash: "8c7c94a038aae72dc89c994551c9d2c690895607"

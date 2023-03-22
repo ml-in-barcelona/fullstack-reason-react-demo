@@ -1,29 +1,32 @@
 {
   "name": "fullstack-reason-react-demo",
   "dependencies": {
+    "ocaml": "4.14.x",
     "@opam/conf-libssl": "3",
     "@opam/dream": "1.0.0~alpha4",
-    "@opam/dune": "3.7.0",
+    "@opam/dune": "*",
     "@opam/mel": "*",
     "@opam/melange": "*",
-    "@opam/meldep": "*",
     "@opam/reason": "*",
-    "react-jsx-ppx": "*",
+    "@opam/reactjs-jsx-ppx": "*",
+    "@opam/rescript-syntax": "*",
+    "@opam/melange-compiler-libs": "*",
     "server-reason-react": "*"
   },
   "devDependencies": {
-    "@opam/dot-merlin-reader": "*",
-    "@opam/ocaml-lsp-server": ">= 1.12.0"
+    "@opam/ocaml-lsp-server": "1.15.1-4.14"
   },
   "resolutions": {
     "esy-openssl": "esy-packages/esy-openssl#619ae2d",
-    "react-jsx-ppx": "ml-in-barcelona/react-jsx-ppx:react-jsx-ppx.opam#73a498b",
+    "@opam/reactjs-jsx-ppx": "melange-re/melange:reactjs-jsx-ppx.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
     "server-reason-react":
-      "ml-in-barcelona/server-reason-react:server-reason-react.opam#2b4c052",
-    "@opam/dune": "ocaml/dune:dune.opam#bb8d6d8",
-    "@opam/melange": "melange-re/melange:melange.opam#81bd400",
-    "@opam/mel": "melange-re/melange:mel.opam#81bd400",
-    "@opam/meldep": "melange-re/melange:meldep.opam#81bd400"
+      "ml-in-barcelona/server-reason-react:server-reason-react.opam#ae26637de78d6fcb5eb12e66b759f82c2ec8049b",
+    "@opam/dune": "ocaml/dune:dune.opam#d3e9b73f6305a62ae7c7a469373d504354a4384c",
+    "@opam/melange": "melange-re/melange:melange.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
+    "@opam/melange-compiler-libs": "melange-re/melange-compiler-libs:melange-compiler-libs.opam#7263bea2285499f5da857f2bb374345a5178791e",
+    "@opam/rescript-syntax": "melange-re/melange:rescript-syntax.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
+    "@opam/mel": "melange-re/melange:mel.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
+    "@opam/reason": "reasonml/reason:reason.opam#0ce98e0cb1b07eecba948a27006787b33d93f0ed"
   },
   "esy": {
     "buildsInSource": "unsafe",
@@ -31,8 +34,7 @@
       "rm -rf node_modules/melange",
       "ln -sfn #{@opam/melange.lib}/melange/runtime node_modules/melange",
       "dune build @client"
-    ],
-    "buildEnv": { "MELANGELIB": "#{@opam/melange.lib / 'melange'}" }
+    ]
   },
   "installConfig": { "pnp": false }
 }

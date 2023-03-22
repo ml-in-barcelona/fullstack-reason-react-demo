@@ -7,21 +7,27 @@ bug-reports: "https://github.com/inhabitedtype/bigstringaf/issues"
 dev-repo: "git+https://github.com/inhabitedtype/bigstringaf.git"
 build: [
   ["dune" "subst"] {dev}
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name] {with-test & arch != "x86_32" & arch != "arm32"}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
 ]
 depends: [
-  "dune" {>= "2.6.0"}
+  "dune" {>= "3.0"}
+  "dune-configurator" {>= "3.0"}
   "alcotest" {with-test}
   "ocaml" {>= "4.08.0"}
-  "conf-pkg-config" {build}
-]
-depopts: [
-  "ocaml-freestanding"
 ]
 conflicts: [
   "mirage-xen" {< "6.0.0"}
-  "ocaml-freestanding" {< "0.4.1"}
+  "ocaml-freestanding"
   "js_of_ocaml" {< "3.5.0"}
 ]
 synopsis: "Bigstring intrinsics and fast blits based on memcpy/memmove"
@@ -37,6 +43,6 @@ Bigstrings and other string-like types.
 So here they are. Go crazy.
 """
 url {
-  src: "https://github.com/inhabitedtype/bigstringaf/archive/0.9.0.tar.gz"
-  checksum: "md5=0d8ceddeb7db821fd4e5235a75ae9752"
+  src: "https://github.com/inhabitedtype/bigstringaf/archive/0.9.1.tar.gz"
+  checksum: "md5=909fdc277cf03096a35b565325d5314a"
 }
