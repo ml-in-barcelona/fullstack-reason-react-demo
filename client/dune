@@ -1,7 +1,6 @@
 (melange.emit
  (alias client)
  (target client)
- (modules client)
  (libraries melange shared_js reason_react bs_css bs_css_emotion)
  (runtime_deps hash.js)
  (preprocess
