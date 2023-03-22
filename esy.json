@@ -5,7 +5,6 @@
     "@opam/conf-libssl": "3",
     "@opam/dream": "1.0.0~alpha4",
     "@opam/dune": "*",
-    "@opam/mel": "*",
     "@opam/melange": "*",
     "@opam/reason": "*",
     "@opam/reactjs-jsx-ppx": "*",
@@ -18,23 +17,18 @@
   },
   "resolutions": {
     "esy-openssl": "esy-packages/esy-openssl#619ae2d",
-    "@opam/reactjs-jsx-ppx": "melange-re/melange:reactjs-jsx-ppx.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
+    "@opam/reactjs-jsx-ppx": "melange-re/melange:reactjs-jsx-ppx.opam#68c6eff82ed056feed809d6cc82558e8697b965b",
     "server-reason-react":
       "ml-in-barcelona/server-reason-react:server-reason-react.opam#ae26637de78d6fcb5eb12e66b759f82c2ec8049b",
-    "@opam/dune": "ocaml/dune:dune.opam#d3e9b73f6305a62ae7c7a469373d504354a4384c",
-    "@opam/melange": "melange-re/melange:melange.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
+    "@opam/dune": "ocaml/dune:dune.opam#6a40b40f3bca7fa31f229c0b2bb37a3384edeb93",
+    "@opam/melange": "melange-re/melange:melange.opam#68c6eff82ed056feed809d6cc82558e8697b965b",
     "@opam/melange-compiler-libs": "melange-re/melange-compiler-libs:melange-compiler-libs.opam#7263bea2285499f5da857f2bb374345a5178791e",
-    "@opam/rescript-syntax": "melange-re/melange:rescript-syntax.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
-    "@opam/mel": "melange-re/melange:mel.opam#09863c526722a6b29740c6ca93a9ab0a556027e3",
+    "@opam/rescript-syntax": "melange-re/melange:rescript-syntax.opam#68c6eff82ed056feed809d6cc82558e8697b965b",
     "@opam/reason": "reasonml/reason:reason.opam#0ce98e0cb1b07eecba948a27006787b33d93f0ed"
   },
+  "installConfig": { "pnp": false },
   "esy": {
     "buildsInSource": "unsafe",
-    "build": [
-      "rm -rf node_modules/melange",
-      "ln -sfn #{@opam/melange.lib}/melange/runtime node_modules/melange",
-      "dune build @client"
-    ]
-  },
-  "installConfig": { "pnp": false }
+    "build": ["dune build @client"]
+  }
 }

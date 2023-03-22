@@ -1,11 +1,12 @@
 "use strict";
 
-var Caml = require("melange/lib/js/caml.js");
-var List = require("melange/lib/js/list.js");
-var Int64 = require("melange/lib/js/int64.js");
-var $$String = require("melange/lib/js/string.js");
-var Caml_int64 = require("melange/lib/js/caml_int64.js");
-var Caml_string = require("melange/lib/js/caml_string.js");
+var $$String = require("melange/stdlib_modules/string.js");
+var Int64 = require("melange/stdlib_modules/int64.js");
+var List = require("melange/stdlib_modules/list.js");
+
+var Caml = require("melange.runtime/caml.js");
+var Caml_int64 = require("melange.runtime/caml_int64.js");
+var Caml_string = require("melange.runtime/caml_string.js");
 
 function $less$less(a, b) {
   return Caml_int64.of_int32(Caml_int64.to_int32(a) << b);
