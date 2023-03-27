@@ -1,5 +1,5 @@
 {
-  "checksum": "0c23d7c98c601fcb6d8306f8c10c242e",
+  "checksum": "dffca391af0dcdef322becc1b503717a",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -18,16 +18,16 @@
       "dependencies": [],
       "devDependencies": []
     },
-    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#ae26637de78d6fcb5eb12e66b759f82c2ec8049b@d41d8cd9": {
+    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#87aa5238f27d464330c80b95a0cf900b426ff658@d41d8cd9": {
       "id":
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#ae26637de78d6fcb5eb12e66b759f82c2ec8049b@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#87aa5238f27d464330c80b95a0cf900b426ff658@d41d8cd9",
       "name": "server-reason-react",
       "version":
-        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#ae26637de78d6fcb5eb12e66b759f82c2ec8049b",
+        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#87aa5238f27d464330c80b95a0cf900b426ff658",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#ae26637de78d6fcb5eb12e66b759f82c2ec8049b"
+          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#87aa5238f27d464330c80b95a0cf900b426ff658"
         ]
       },
       "overrides": [],
@@ -70,7 +70,7 @@
       "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
       "overrides": [],
       "dependencies": [
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#ae26637de78d6fcb5eb12e66b759f82c2ec8049b@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#87aa5238f27d464330c80b95a0cf900b426ff658@d41d8cd9",
         "ocaml@4.14.0@d41d8cd9",
         "@opam/rescript-syntax@github:melange-re/melange:rescript-syntax.opam#68c6eff82ed056feed809d6cc82558e8697b965b@d41d8cd9",
         "@opam/reason@github:reasonml/reason:reason.opam#0ce98e0cb1b07eecba948a27006787b33d93f0ed@d41d8cd9",
@@ -2417,7 +2417,7 @@
         "@opam/faraday@opam:0.8.2@86b73f1f",
         "@opam/dune@github:ocaml/dune:dune.opam#6a40b40f3bca7fa31f229c0b2bb37a3384edeb93@d41d8cd9",
         "@opam/dream-pure@opam:1.0.0~alpha2@1fdc8e01",
-        "@opam/digestif@opam:1.1.3@d97ea3c3",
+        "@opam/digestif@opam:1.1.4@49eebbf6",
         "@opam/bigstringaf@opam:0.9.1@e6f2e882",
         "@opam/base64@opam:3.5.1@b3a772d2",
         "@opam/angstrom@opam:0.15.0@105656d9",
@@ -2432,7 +2432,7 @@
         "@opam/faraday@opam:0.8.2@86b73f1f",
         "@opam/dune@github:ocaml/dune:dune.opam#6a40b40f3bca7fa31f229c0b2bb37a3384edeb93@d41d8cd9",
         "@opam/dream-pure@opam:1.0.0~alpha2@1fdc8e01",
-        "@opam/digestif@opam:1.1.3@d97ea3c3",
+        "@opam/digestif@opam:1.1.4@49eebbf6",
         "@opam/bigstringaf@opam:0.9.1@e6f2e882",
         "@opam/base64@opam:3.5.1@b3a772d2",
         "@opam/angstrom@opam:0.15.0@105656d9"
@@ -2511,27 +2511,26 @@
         "@opam/base-unix@opam:base@87d0b2eb"
       ]
     },
-    "@opam/digestif@opam:1.1.3@d97ea3c3": {
-      "id": "@opam/digestif@opam:1.1.3@d97ea3c3",
+    "@opam/digestif@opam:1.1.4@49eebbf6": {
+      "id": "@opam/digestif@opam:1.1.4@49eebbf6",
       "name": "@opam/digestif",
-      "version": "opam:1.1.3",
+      "version": "opam:1.1.4",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://opam.ocaml.org/cache/sha256/c3/c32b8ecbc40b22645ae3d6e386bb9c9c5ab2fde130a252e994b18eb0d580c92e#sha256:c32b8ecbc40b22645ae3d6e386bb9c9c5ab2fde130a252e994b18eb0d580c92e",
-          "archive:https://github.com/mirage/digestif/releases/download/v1.1.3/digestif-1.1.3.tbz#sha256:c32b8ecbc40b22645ae3d6e386bb9c9c5ab2fde130a252e994b18eb0d580c92e"
+          "archive:https://opam.ocaml.org/cache/sha256/c3/c3793e720f0da8054f6286c545c821a7febe882e7f4e5497ec89b15a353511e1#sha256:c3793e720f0da8054f6286c545c821a7febe882e7f4e5497ec89b15a353511e1",
+          "archive:https://github.com/mirage/digestif/releases/download/v1.1.4/digestif-1.1.4.tbz#sha256:c3793e720f0da8054f6286c545c821a7febe882e7f4e5497ec89b15a353511e1"
         ],
         "opam": {
           "name": "digestif",
-          "version": "1.1.3",
-          "path": "esy.lock/opam/digestif.1.1.3"
+          "version": "1.1.4",
+          "path": "esy.lock/opam/digestif.1.1.4"
         }
       },
       "overrides": [],
       "dependencies": [
         "ocaml@4.14.0@d41d8cd9", "@opam/eqaf@opam:0.9@31beb6b7",
         "@opam/dune@github:ocaml/dune:dune.opam#6a40b40f3bca7fa31f229c0b2bb37a3384edeb93@d41d8cd9",
-        "@opam/conf-pkg-config@opam:2@85f8644d",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
