@@ -13,7 +13,7 @@ The app consists in 5 simple nested components.
 
 ## Running the benchmark
 
-Command to run `wrk -t12 -c400 -d30s http://localhost:xxxx`
+Command to run `wrk -t8 -c400 -d30s http://localhost:xxxx`
 
 ## Results
 
@@ -23,12 +23,12 @@ Command to run `wrk -t12 -c400 -d30s http://localhost:xxxx`
 
 ```sh
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    34.72ms   10.67ms 206.95ms   87.77%
-    Req/Sec   578.38    387.12     2.34k    52.28%
-  207023 requests in 30.10s, 282.13MB read
-  Socket errors: connect 157, read 78, write 5, timeout 0
-Requests/sec:   6877.41
-Transfer/sec:      9.37MB
+    Latency     6.00ms    0.91ms  28.60ms   97.93%
+    Req/Sec     8.39k   683.59    22.10k    96.55%
+  2007012 requests in 30.10s, 5.50GB read
+  Socket errors: connect 0, read 405, write 2, timeout 0
+Requests/sec:  66669.42
+Transfer/sec:    186.93MB
 ```
 
 ### node-express-js
