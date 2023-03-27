@@ -17,7 +17,7 @@
  (include_subdirs unqualified)
  (library
   (name bs_css_emotion)
-  (libraries melange bs_css)
+  (libraries bs_css)
   (wrapped false)
   (modes melange)))
 

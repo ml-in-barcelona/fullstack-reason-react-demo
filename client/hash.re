@@ -1,0 +1,1 @@
+let default = Hash.default;

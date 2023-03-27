@@ -1,8 +1,15 @@
 (melange.emit
  (alias client)
  (target client)
+ (modules client)
  (libraries melange shared_js reason_react bs_css bs_css_emotion)
- (runtime_deps hash.js)
  (preprocess
   (pps reactjs-jsx-ppx))
+ (module_systems commonjs))
+
+(melange.emit
+ (alias client)
+ (target hash)
+ (modules hash)
+ (libraries melange server-reason-react.hash)
  (module_systems commonjs))

@@ -9,7 +9,7 @@ module.exports = (env) => ({
   },
   resolve: {
     alias: {
-      ["@emotion/hash"]: Path.resolve(__dirname, "_build/default/client/client/client", "hash.js"),
+      "@emotion/hash": Path.resolve(__dirname, "_build/default/client/hash/client/", "hash.js"),
     },
   },
 });
