@@ -49,16 +49,7 @@ let home = ReactDOM.renderToString(<Page />);
 let handler =
   Dream.router([
     Dream.get("/", _request => Dream.html(home)),
-    Dream.get("/debug", _request =>
-      Dream.html(Css.style([Css.display(`block)]))
-    ),
     Dream.get("/static/**", Dream.static("./static")),
   ]);
 
-Dream.run(
-  ~port=8080,
-  ~interface="localhost",
-  ~adjust_terminal=false,
-  ~greeting=true,
-  handler,
-);
+Dream.run(~port=8080, handler);
