@@ -1,11 +1,11 @@
 .DEFAULT_GOAL := help
 
+name = fullstack-reason-react-demo
+current_hash = $(shell git rev-parse HEAD | cut -c1-7)
+
 ESY = esy
 DUNE = esy dune
-MEL = esy mel
 WEBPACK = npx webpack --progress
-current_hash = $(shell git rev-parse HEAD | cut -c1-7)
-name = fullstack-reason-react-demo
 
 .PHONY: install
 install: ## Install dependencies from esy.json and package.json

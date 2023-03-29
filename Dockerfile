@@ -68,4 +68,6 @@ COPY --from=esy /app/_build/default/server/server.exe /bin/server.exe
 # Copy client artifacts
 COPY --from=esy /app/static /static
 
+ENV SERVER_INTERFACE "0.0.0.0"
+
 CMD ["/bin/server.exe"]

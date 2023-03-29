@@ -52,4 +52,10 @@ let handler =
     Dream.get("/static/**", Dream.static("./static")),
   ]);
 
-Dream.run(~port=8080, ~interface="0.0.0.0", handler);
+let interface =
+  switch (Sys.getenv_opt("SERVER_INTERFACE")) {
+  | Some(env) => env
+  | None => "localhost"
+  };
+
+Dream.run(~port=8080, ~interface, handler);
