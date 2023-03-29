@@ -23,12 +23,12 @@ Command to run `wrk -t8 -c400 -d30s http://localhost:xxxx`
 
 ```sh
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     6.00ms    0.91ms  28.60ms   97.93%
-    Req/Sec     8.39k   683.59    22.10k    96.55%
-  2007012 requests in 30.10s, 5.50GB read
-  Socket errors: connect 0, read 405, write 2, timeout 0
-Requests/sec:  66669.42
-Transfer/sec:    186.93MB
+    Latency   109.35us   42.15us   1.68ms   75.40%
+    Req/Sec     9.10k     2.11k   12.52k    51.08%
+  2179657 requests in 30.10s, 5.96GB read
+
+Requests/sec:  72414.39
+Transfer/sec:    202.62MB
 ```
 
 ### node-express-js
@@ -40,7 +40,7 @@ Transfer/sec:    186.93MB
     Latency    30.95ms   10.65ms 221.09ms   90.26%
     Req/Sec   650.73    443.99     1.57k    50.64%
   233002 requests in 30.09s, 216.21MB read
-  Socket errors: connect 157, read 39, write 0, timeout 0
+
 Requests/sec:   7742.55
 Transfer/sec:      7.18MB
 ```
@@ -54,7 +54,7 @@ Transfer/sec:      7.18MB
     Latency    22.85ms    5.24ms 120.22ms   95.59%
     Req/Sec     0.88k   492.74     2.31k    50.77%
   315018 requests in 30.10s, 257.46MB read
-  Socket errors: connect 157, read 26, write 0, timeout 0
+
 Requests/sec:  10464.64
 Transfer/sec:      8.55MB
 ```
@@ -68,7 +68,7 @@ Transfer/sec:      8.55MB
     Latency     4.35ms  462.82us  17.63ms   91.16%
     Req/Sec     4.60k     2.27k   18.12k    59.92%
   1648019 requests in 30.10s, 2.02GB read
-  Socket errors: connect 157, read 98, write 0, timeout 0
+
 Requests/sec:  54743.09
 Transfer/sec:     68.60MB
 ```
