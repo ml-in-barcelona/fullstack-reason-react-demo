@@ -31,6 +31,7 @@ module Layout = {
         Css.margin2(~v=`zero, ~h=`auto),
         Css.border(`px(2), `solid, Css.gray),
         Css.borderRadius(`px(6)),
+        Css.media("(max-width: 400px)", [Css.overflow(`hidden)]),
       ])}>
       children
     </div>;
