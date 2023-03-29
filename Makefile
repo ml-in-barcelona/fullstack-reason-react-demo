@@ -9,44 +9,44 @@ name = fullstack-reason-react-demo
 
 .PHONY: install
 install: ## Install dependencies from esy.json and package.json
-	$(ESY) install
-	npm install
+	@$(ESY) install
+	@npm install
 
 .PHONY: client-bundle
 client-bundle: ## Bundle the JS code
-	$(WEBPACK)
+	@$(WEBPACK)
 
 .PHONY: client-bundle-watch
 client-bundle-watch: ## Watch and bundle the JS code
-	$(WEBPACK) --watch
+	@$(WEBPACK) --watch
 
 .PHONY: client-bundle
 client-bundle-prod: ## Bundle the JS code for production
-	$(WEBPACK) --env production
+	@$(WEBPACK) --env production
 
 .PHONY: client-build
 client-build: ## Build Reason code
-	$(ESY) build
+	@$(ESY) build
 
 .PHONY: client-build-watch
 client-build-watch: ## Watch reason code
-	$(DUNE) build -w @client
+	@$(DUNE) build -w @client
 
 .PHONY: server-build
 server-build: ## Build the project, including non installable libraries and executables
-	$(DUNE) build @@default
+	@$(DUNE) build @@default
 
 .PHONY: server-build-prod
 server-build-prod: ## Build for production (--profile=prod)
-	$(DUNE) build --profile=prod @@default
+	@$(DUNE) build --profile=prod @@default
 
 .PHONY: server-start
 server-start: ## Start the server
-	$(DUNE) exec --root . server/server.exe
+	@$(DUNE) exec --root . server/server.exe
 
 .PHONY: server-dev
 server-dev: ## Build in watch mode
-	$(DUNE) build -w @@default
+	@$(DUNE) build -w @@default
 
 .PHONY: dev
 dev: ## Start the server in dev mode
@@ -57,16 +57,16 @@ dev: ## Start the server in dev mode
 
 .PHONY: clean
 clean: ## Clean artifacts
-	$(DUNE) clean
-	rm -rf static/
+	@$(DUNE) clean
+	@rm -rf static/
 
 .PHONY: format
 format: ## Format the codebase with ocamlformat/refmt
-	$(DUNE) build @fmt --auto-promote
+	@$(DUNE) build @fmt --auto-promote
 
 .PHONY: format-check
 format-check: ## Checks if format is correct
-	$(DUNE) build @fmt
+	@$(DUNE) build @fmt
 
 .PHONY: help
 help: ## Print this help message
@@ -78,9 +78,9 @@ help: ## Print this help message
 
 .PHONY: docker-build
 docker-build: ## docker build
-	docker build . --tag "$(name):$(current_hash)" --platform linux/amd64 --progress=plain
+	@docker build . --tag "$(name):$(current_hash)" --platform linux/amd64 --progress=plain
 
 .PHONY: docker-run
 docker-run: ## docker run
-	docker run -d --platform linux/amd64 \
-	$(name):$(current_hash)
+	@docker run -d --platform linux/amd64 \
+	@$(name):$(current_hash)

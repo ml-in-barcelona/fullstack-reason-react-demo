@@ -1,10 +1,9 @@
 {
   "name": "fullstack-reason-react-demo",
   "dependencies": {
-    "@emotion/cache": "^11.10.5",
+    "@emotion/css": "^11.10.6",
     "bs-css": "^15.3.1",
     "bs-css-emotion": "^4.3.1",
-    "emotion": "^11.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "webpack": "^5.64.4",
