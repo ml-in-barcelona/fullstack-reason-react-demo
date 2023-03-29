@@ -52,4 +52,4 @@ let handler =
     Dream.get("/static/**", Dream.static("./static")),
   ]);
 
-Dream.run(~port=8080, handler);
+Dream.run(~port=8080, ~interface="0.0.0.0", handler);
