@@ -19,7 +19,12 @@ module Layout = {
       className={Css.style([
         Css.maxWidth(`px(800)),
         Css.margin2(~v=`zero, ~h=`auto),
-        Css.padding2(~v=`zero, ~h=`rem(2.0)),
+        Css.padding4(
+          ~top=`rem(4.0),
+          ~bottom=`zero,
+          ~left=`rem(2.0),
+          ~right=`rem(2.0),
+        ),
         Theme.Media.onMobile([Css.overflow(`hidden)]),
       ])}>
       children
@@ -92,12 +97,10 @@ module Header = {
 [@react.component]
 let make = () => {
   <Root background=Theme.Color.darkGrey>
-    <Spacer top=12>
-      <Layout>
-        <Stack gap=8 justify=`start>
-          <> <Header /> <Hr /> <Counter /> </>
-        </Stack>
-      </Layout>
-    </Spacer>
+    <Layout>
+      <Stack gap=8 justify=`start>
+        <> <Header /> <Hr /> <Counter /> </>
+      </Stack>
+    </Layout>
   </Root>;
 };

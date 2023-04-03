@@ -2,7 +2,7 @@ open Theme;
 
 [@react.component]
 let make =
-    (~gap=0, ~align=`start, ~justify=`around, ~fullHeight=true, ~children) => {
+    (~gap=0, ~align=`start, ~justify=`around, ~fullHeight=false, ~children) => {
   let className =
     Css.style([
       Css.display(`flex),
