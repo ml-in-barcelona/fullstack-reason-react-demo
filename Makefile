@@ -26,7 +26,7 @@ client-bundle-prod: ## Bundle the JS code for production
 
 .PHONY: client-build
 client-build: ## Build Reason code
-	@$(ESY) build
+	@$(DUNE) build @client
 
 .PHONY: client-build-watch
 client-build-watch: ## Watch reason code
@@ -42,10 +42,15 @@ server-build-prod: ## Build for production (--profile=prod)
 
 .PHONY: server-start
 server-start: ## Start the server
-	@$(DUNE) exec --root . server/server.exe
+	rm _build/.lock
+	@$(DUNE) exec --root . --no-buffer server/server.exe
 
 .PHONY: server-dev
 server-dev: ## Build in watch mode
+	@$(DUNE) build -w @@default
+
+.PHONY: server-dev
+watch: ## Build in watch
 	@$(DUNE) build -w @@default
 
 .PHONY: dev

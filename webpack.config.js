@@ -1,11 +1,12 @@
 const Path = require("path");
 
 module.exports = (env) => ({
-  entry: "./_build/default/client/client/client/client.js",
+  entry: ["./_build/default/client/app/client/app.js",
+  "./_build/default/client/header/client/header.js"],
   mode: env.production ? "production" : "development",
   output: {
     path: Path.join(__dirname, "static"),
-    filename: "main.js",
+    filename: "[name].js",
   },
   resolve: {
     alias: {

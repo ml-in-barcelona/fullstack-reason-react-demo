@@ -1,20 +1,21 @@
-let globalStyles = {j|
+let globalStyles = {js|
   html, body, #root {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #292a2d;
   }
 
   * {
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-|j};
+|js};
 
 module Page = {
   [@react.component]
-  let make = () => {
+  let make = (~children, ~src) => {
     <html>
       <head>
         <meta charSet="UTF-8" />
@@ -36,19 +37,27 @@ module Page = {
           dangerouslySetInnerHTML={"__html": Css.render_style_tag()}
         />
       </head>
-      <body>
-        <div id="root"> <Shared_native.App /> </div>
-        <script src="/static/main.js" />
-      </body>
+      <body> <div id="root"> children </div> <script src /> </body>
     </html>;
   };
 };
 
-let home = ReactDOM.renderToString(<Page />);
-
 let handler =
   Dream.router([
-    Dream.get("/", _request => Dream.html(home)),
+    Dream.get("/", _request =>
+      Dream.html(
+        ReactDOM.renderToString(
+          <Page src="/static/main.js"> <Shared_native.App /> </Page>,
+        ),
+      )
+    ),
+    Dream.get("/header", _request =>
+      Dream.html(
+        ReactDOM.renderToString(
+          <Page src="/static/header.js"> <Shared_native.Ahrefs /> </Page>,
+        ),
+      )
+    ),
     Dream.get("/static/**", Dream.static("./static")),
   ]);
 

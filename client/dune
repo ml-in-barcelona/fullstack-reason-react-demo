@@ -1,7 +1,16 @@
 (melange.emit
  (alias client)
- (target client)
- (modules client)
+ (target app)
+ (modules app)
+ (libraries melange shared_js reason_react bs_css bs_css_emotion)
+ (preprocess
+  (pps reactjs-jsx-ppx))
+ (module_systems commonjs))
+
+(melange.emit
+ (alias client)
+ (target header)
+ (modules header)
  (libraries melange shared_js reason_react bs_css bs_css_emotion)
  (preprocess
   (pps reactjs-jsx-ppx))
