@@ -47,7 +47,7 @@ let handler =
     Dream.get("/", _request =>
       Dream.html(
         ReactDOM.renderToString(
-          <Page src="/static/main.js"> <Shared_native.App /> </Page>,
+          <Page src="/static/app.js"> <Shared_native.App /> </Page>,
         ),
       )
     ),

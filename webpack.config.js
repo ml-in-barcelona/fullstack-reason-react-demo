@@ -1,8 +1,10 @@
 const Path = require("path");
 
 module.exports = (env) => ({
-  entry: ["./_build/default/client/app/client/app.js",
-  "./_build/default/client/header/client/header.js"],
+  entry: {
+    app: "./_build/default/client/app/client/app.js",
+    header: "./_build/default/client/header/client/header.js"
+  },
   mode: env.production ? "production" : "development",
   output: {
     path: Path.join(__dirname, "static"),
