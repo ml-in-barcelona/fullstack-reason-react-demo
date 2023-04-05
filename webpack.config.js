@@ -18,9 +18,4 @@ module.exports = (env) => ({
       "@emotion/hash": Path.join(buildFolder, "hash", "client", "hash.js"),
     },
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
 });
