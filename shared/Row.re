@@ -27,7 +27,7 @@ let make =
       | `center => Css.justifyContent(`center)
       | `end_ => Css.justifyContent(`flexEnd)
       },
-      Css.unsafe("gap", Theme.to_string(gap)),
+      Css.gap(Theme.px(gap)),
     ]);
 
   <div className> children </div>;

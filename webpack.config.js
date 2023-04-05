@@ -1,6 +1,7 @@
 const Path = require("path");
 
 module.exports = (env) => ({
+  devtool: env.production ? false : "inline-cheap-module-source-map",
   entry: {
     app: "./_build/default/client/app/client/app.js",
     header: "./_build/default/client/header/client/header.js"

@@ -1,26 +1,20 @@
-let oneDirectionRule = (prop: string, value: int) =>
-  switch (value) {
-  | 0 => []
-  | _ => [Css.unsafe(prop, value |> Theme.to_string)]
-  };
-
-let shorthandRule = (prop: string, value) =>
-  switch (value) {
-  | 0 => []
-  | _ => [Css.unsafe(prop, value |> Theme.to_string)]
+let unsafeWhenNotZero = (prop, value) =>
+  if (value == 0) {
+    [];
+  } else {
+    [prop(value |> Theme.px)];
   };
 
 [@react.component]
-let make =
-    (~children=?, ~top=0, ~left=0, ~right=0, ~bottom=0, ~all=0, ~inner=false) => {
+let make = (~children=?, ~top=0, ~left=0, ~right=0, ~bottom=0, ~all=0) => {
   let className =
     Css.style(
       List.flatten([
-        oneDirectionRule(inner ? "marginTop" : "paddingTop", top),
-        oneDirectionRule(inner ? "marginBottom" : "paddingBottom", bottom),
-        oneDirectionRule(inner ? "marginLeft" : "paddingLeft", left),
-        oneDirectionRule(inner ? "marginRight" : "paddingRight", right),
-        shorthandRule(inner ? "margin" : "padding", all),
+        unsafeWhenNotZero(Css.marginTop, top),
+        unsafeWhenNotZero(Css.marginBottom, bottom),
+        unsafeWhenNotZero(Css.marginLeft, left),
+        unsafeWhenNotZero(Css.marginRight, right),
+        unsafeWhenNotZero(Css.margin, all),
       ]),
     );
 

@@ -1,24 +1,3 @@
-(subdir
- node_modules
- (dirs bs-css bs-css-emotion)
- (vendored_dirs bs-css bs-css-emotion))
-
-(subdir
- node_modules/bs-css
- (include_subdirs unqualified)
- (library
-  (name bs_css)
-  (libraries melange)
-  (wrapped false)
-  (modes melange)))
-
-(subdir
- node_modules/bs-css-emotion
- (include_subdirs unqualified)
- (library
-  (name bs_css_emotion)
-  (libraries bs_css)
-  (wrapped false)
-  (modes melange)))
-
 (subdir static)
+
+(subdir vendor)

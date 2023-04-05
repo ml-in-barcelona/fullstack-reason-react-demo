@@ -5,8 +5,6 @@ type justify = [ | `around | `between | `evenly | `start | `center | `end_];
 let unit = v => v * 4;
 let px = v => `px(unit(v));
 
-let to_string = v => (unit(v) |> string_of_int) ++ "px";
-
 module Media = {
   let maxWidth400 = "(max-width: 400px)";
   let onMobile = rules => {
@@ -24,4 +22,5 @@ module Color = {
   let darkGrey = Css.hex("292a2d");
   let backgroundBox = Css.hex("2e3c56");
   let brokenWhite = Css.hex("eaecee");
+  let white01 = Css.rgba(255, 255, 255, `num(0.1));
 };
