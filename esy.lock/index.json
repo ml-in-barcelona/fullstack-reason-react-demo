@@ -1,5 +1,5 @@
 {
-  "checksum": "b9e3525bd3579ef6f24467ab5362534a",
+  "checksum": "1aea597062bfcc8b15475250b34a1b7a",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -18,16 +18,16 @@
       "dependencies": [],
       "devDependencies": []
     },
-    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#45bf48035d5d3dd549fd3cf8b644df1cef930b3e@d41d8cd9": {
+    "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#2b5a1471ac7058e6db2469b44d01532876750fc6@d41d8cd9": {
       "id":
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#45bf48035d5d3dd549fd3cf8b644df1cef930b3e@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#2b5a1471ac7058e6db2469b44d01532876750fc6@d41d8cd9",
       "name": "server-reason-react",
       "version":
-        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#45bf48035d5d3dd549fd3cf8b644df1cef930b3e",
+        "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#2b5a1471ac7058e6db2469b44d01532876750fc6",
       "source": {
         "type": "install",
         "source": [
-          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#45bf48035d5d3dd549fd3cf8b644df1cef930b3e"
+          "github:ml-in-barcelona/server-reason-react:server-reason-react.opam#2b5a1471ac7058e6db2469b44d01532876750fc6"
         ]
       },
       "overrides": [],
@@ -68,7 +68,7 @@
       "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
       "overrides": [],
       "dependencies": [
-        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#45bf48035d5d3dd549fd3cf8b644df1cef930b3e@d41d8cd9",
+        "server-reason-react@github:ml-in-barcelona/server-reason-react:server-reason-react.opam#2b5a1471ac7058e6db2469b44d01532876750fc6@d41d8cd9",
         "ocaml@4.14.0@d41d8cd9",
         "@opam/rescript-syntax@github:melange-re/melange:rescript-syntax.opam#227b7cb862c4a81f74c19fa051a75005918a18ff@d41d8cd9",
         "@opam/reason@github:reasonml/reason:reason.opam#0ce98e0cb1b07eecba948a27006787b33d93f0ed@d41d8cd9",

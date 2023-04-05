@@ -22,7 +22,6 @@ module ExternalLinkIcon = {
   let make = () => {
     <span className={Css.style([Css.fontSize(`px(10))])}>
       {React.string({js|🔗|js})}
-      {React.string({js|🔗|js})}
     </span>;
   };
 };
@@ -75,6 +74,116 @@ module Logo = {
       ])}>
       <ShrinkerText color=Theme.Color.ahrefs> "ahrefs" </ShrinkerText>
     </p>;
+  };
+};
+
+module Dropdown = {
+  module Trigger = {
+    [@react.component]
+    let make = (~isOpen, ~onClick) => {
+      <div
+        onClick
+        className={Css.style([
+          Css.color(isOpen ? Theme.Color.white : Theme.Color.lightGrey),
+          Css.cursor(`pointer),
+          Css.userSelect(`none),
+          Css.fontSize(`px(14)),
+          Css.whiteSpace(`nowrap),
+          Css.hover([Css.color(Theme.Color.white)]),
+        ])}>
+        {React.string("More tools")}
+      </div>;
+    };
+  };
+
+  /* let useClickOutside = (domRef, callback) => {
+       open Webapi.Dom;
+       let onClickHandler = event => {
+         MouseEvent.stopPropagation(event);
+         let target = MouseEvent.target(event);
+         let targetElement = EventTarget.unsafeAsElement(target);
+         let targetIsOutsideOverlayTrigger =
+           switch (domRef |> Js.Nullable.toOption) {
+           | Some(ref_) => !Element.contains(targetElement, ref_)
+           | None => false
+           };
+
+         if (targetIsOutsideOverlayTrigger) {
+           callback();
+         };
+       };
+
+       React.useEffect2(
+         () => {
+           Document.addMouseDownEventListener(onClickHandler, document);
+           Some(
+             () =>
+               Document.removeMouseDownEventListener(onClickHandler, document),
+           );
+         },
+         (onClick, domRef.React.current),
+       );
+     }; */
+
+  [@react.component]
+  let make = (~items, ~onClick) => {
+    let (isOpen, setIsOpen) = useStateValue(false);
+    let _triggerRef = React.useRef(Js.Nullable.null);
+
+    /* useClickOutside(triggerRef, () =>
+         if (isOpen) {
+           setIsOpen(false);
+         }
+       ); */
+
+    <div className={Css.style([Css.position(`relative)])}>
+      <Trigger isOpen onClick={_e => setIsOpen(!isOpen)} />
+      {isOpen
+         ? {
+           <div
+             className={Css.style([
+               Css.position(`absolute),
+               Css.top(`px(25)),
+               Css.left(`percent(-50.)),
+               Css.background(Theme.Color.backgroundBox),
+               Css.padding(`rem(1.)),
+               Css.borderRadius(`px(6)),
+               Css.boxShadow(
+                 Css.Shadow.box(
+                   ~x=`zero,
+                   ~y=`zero,
+                   ~blur=`px(10),
+                   ~spread=`px(1),
+                   Css.rgba(0, 0, 0, `percent(30.)),
+                 ),
+               ),
+             ])}>
+             {React.array(
+                Belt.Array.mapWithIndex(items, (key, item) =>
+                  <div
+                    key={Int.to_string(key)}
+                    className={Css.style([
+                      Css.display(`block),
+                      Css.margin2(~h=`zero, ~v=`rem(0.3)),
+                    ])}>
+                    <span
+                      onClick={_e => onClick(item)}
+                      className={Css.style([
+                        Css.color(Theme.Color.lightGrey),
+                        Css.cursor(`pointer),
+                        Css.fontSize(`px(14)),
+                        Css.whiteSpace(`nowrap),
+                        Css.hover([Css.color(Theme.Color.white)]),
+                      ])}>
+                      {React.string(item)}
+                    </span>
+                  </div>
+                ),
+              )}
+           </div>;
+         }
+         : React.null}
+    </div>;
   };
 };
 
@@ -155,27 +264,7 @@ module Menu = {
            </div>
          ),
        )}
-      {React.array(
-         Belt.Array.mapWithIndex(moreTools, (key, item) =>
-           <div
-             key={Int.to_string(key)}
-             className={Css.style([Css.display(`block)])}>
-             <span
-               onClick={_e => navigate(item)}
-               className={Css.style([
-                 currentNavigate == item
-                   ? Css.color(Theme.Color.white)
-                   : Css.color(Theme.Color.lightGrey),
-                 Css.cursor(`pointer),
-                 Css.fontSize(`px(14)),
-                 Css.whiteSpace(`nowrap),
-                 Css.hover([Css.color(Theme.Color.white)]),
-               ])}>
-               {React.string(item)}
-             </span>
-           </div>
-         ),
-       )}
+      <Dropdown items=moreTools onClick=navigate />
       <span
         className={Css.style([
           Css.color(Theme.Color.white),

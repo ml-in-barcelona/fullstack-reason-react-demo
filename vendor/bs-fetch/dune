@@ -1,0 +1,4 @@
+(library
+ (name bs_fetch)
+ (wrapped false)
+ (modes melange))
