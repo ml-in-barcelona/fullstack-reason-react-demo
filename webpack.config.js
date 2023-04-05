@@ -1,10 +1,12 @@
 const Path = require("path");
 
+let buildFolder = Path.join(__dirname, "_build/default/client");
+
 module.exports = (env) => ({
   devtool: env.production ? false : "inline-cheap-module-source-map",
   entry: {
-    app: "./_build/default/client/app/client/app.js",
-    header: "./_build/default/client/header/client/header.js"
+    app: Path.join(buildFolder, "/app/client/app.js"),
+    header: Path.join(buildFolder, "/header/client/header.js")
   },
   mode: env.production ? "production" : "development",
   output: {
@@ -13,7 +15,7 @@ module.exports = (env) => ({
   },
   resolve: {
     alias: {
-      "@emotion/hash": Path.resolve(__dirname, "_build/default/client/hash/client/", "hash.js"),
+      "@emotion/hash": Path.join(buildFolder, "hash", "client", "hash.js"),
     },
   },
 });
