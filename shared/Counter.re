@@ -4,7 +4,7 @@ let make = () => {
 
   let increment = event => {
     let _target = ReactEvent.Mouse.target(event);
-    Js.Console.log("Console works too! " /* ++ target##value */);
+    print_endline("Console works too! " /* ++ target##value */);
     setCount(_ => count + 1);
   };
 

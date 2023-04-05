@@ -1,0 +1,7 @@
+(library
+ (name bs_css)
+ (libraries melange)
+ (wrapped false)
+ (modes melange)
+ (flags
+  (:standard -w -32-34)))

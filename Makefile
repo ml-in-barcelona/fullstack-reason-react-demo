@@ -14,11 +14,11 @@ install: ## Install dependencies from esy.json and package.json
 
 .PHONY: client-bundle
 client-bundle: ## Bundle the JS code
-	@$(WEBPACK)
+	@$(WEBPACK) --env development
 
 .PHONY: client-bundle-watch
 client-bundle-watch: ## Watch and bundle the JS code
-	@$(WEBPACK) --watch
+	@$(WEBPACK) --watch --env development
 
 .PHONY: client-bundle
 client-bundle-prod: ## Bundle the JS code for production
@@ -26,7 +26,7 @@ client-bundle-prod: ## Bundle the JS code for production
 
 .PHONY: client-build
 client-build: ## Build Reason code
-	@$(ESY) build
+	@$(DUNE) build @client
 
 .PHONY: client-build-watch
 client-build-watch: ## Watch reason code
@@ -42,17 +42,21 @@ server-build-prod: ## Build for production (--profile=prod)
 
 .PHONY: server-start
 server-start: ## Start the server
-	@$(DUNE) exec --root . server/server.exe
+	@$(DUNE) exec --root . --no-buffer server/server.exe
 
 .PHONY: server-dev
 server-dev: ## Build in watch mode
 	@$(DUNE) build -w @@default
 
+.PHONY: server-dev
+watch: ## Build in watch
+	@$(DUNE) build -w @@default
+
 .PHONY: dev
 dev: ## Start the server in dev mode
 	@watchexec \
-		-w client -w server -w shared \
-		--exts re,rei,ml,mli -r -c \
+		-w client -w server -w shared -w vendor \
+		--exts re,rei,res,resi,ml,mli -r -c \
 		"$(MAKE) client-build; $(MAKE) server-build; $(MAKE) client-bundle; $(MAKE) server-start"
 
 .PHONY: clean

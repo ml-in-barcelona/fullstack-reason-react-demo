@@ -45,7 +45,7 @@ RUN esy build-dependencies
 COPY client/ client/
 COPY shared/ shared/
 COPY server/ server/
-COPY reason-react/ reason-react/
+COPY vendor/ vendor/
 COPY dune dune
 COPY dune-project dune-project
 COPY webpack.config.js webpack.config.js
