@@ -5,4 +5,6 @@
  (wrapped false)
  (modes melange)
  (flags -w -105-34)
- (libraries bs_fetch))
+ (libraries bs_fetch)
+ (preprocess
+  (pps melange.ppx)))
