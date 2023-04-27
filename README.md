@@ -58,7 +58,7 @@ The folder contains the library for shared code between `client` and `server`. d
 
 `Shared_js` is compiled by Melange to JavaScript while `Shared_native` by OCaml to a native library.
 
-The code of shared consist of an app to demostrate a few usages of server-reason-react implementations, such as server-reason-react.emotion or server-reason-react.js.
+The code of shared consist of an app to demostrate a few usages of server-reason-react implementations, such as server-reason-react.css or server-reason-react.js.
 
 - `server-reason-react.css` is the implementation of bs-css in the server. Maintains the same API and does the same functionality as emotion.js but in the server. All Css.* methods are available and generates the hash of the classnames. It also adds a fn `Css.render_style_tag()` to render the resultant CSS in the page, with the intention to be called in native.
 - `server-reason-react.belt` is the implementation of [Belt](https://rescript-lang.org/docs/manual/latest/api/belt) in pure OCaml.
@@ -68,4 +68,3 @@ The code of shared consist of an app to demostrate a few usages of server-reason
 
 - This demo relies on a few technologies/features that aren't polished. For now (dune, Melange and server-reason-react) are patched to specific versions from Github commit hashes. Check [esy.json](./esy.json) for exact versions.
 - **editor support**. Currently there's no editor support in the `shared` folder. Haven't played much with it and I'm not sure if is doable to have proper support with `copy_files`. Other methods of compilation (vlib) can have better support. After [ocaml/dune/pull/6476](https://github.com/ocaml/dune/pull/6476) it can be smooth.
-- Js from ReScript isn't availables in native. We have Js APIs implemented in OCaml/C FFI. The only piece that is missing is `Js.t` representation that maps to JavaScript Object in ReScript, but there's no equivalent in native.
