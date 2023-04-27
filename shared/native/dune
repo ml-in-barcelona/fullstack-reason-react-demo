@@ -9,6 +9,6 @@
   server-reason-react.webapi
   server-reason-react.css)
  (preprocess
-  (pps server-reason-react.ppx)))
+  (pps melange.ppx server-reason-react.ppx)))
 
 (copy_files# "../*.re")

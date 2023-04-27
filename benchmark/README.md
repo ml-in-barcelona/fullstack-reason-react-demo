@@ -1,16 +1,5 @@
 # Benchmark
 
-This directory contains the apps written in JavaScript (while the OCaml impl lives on server directory).
-The same code is used for all benchmarks, translated to JavaScript in `node-express-js` and `bun-js`, and pointing to the
-compiled JS from the `shared` directory in `node-express-rescript`.
-
-The app consists in 5 simple nested components.
-
-- `node-express-rescript`: Nodejs with Express running the JavaScript app's version compiled by Melange (containing Belt, ReScript stdlib and some React leftovers from the compilation)
-- `node-express-js` Nodejs with Express running the JavaScript app's version (cleanup done by hand)
-- `bun-js` Bun with JavaScript app's version (cleanup done by hand)
-- `dream-reason-native` OCaml with Dream running server-reason-react app
-
 ## Running the benchmark
 
 Command to run `wrk -t8 -c400 -d30s http://localhost:xxxx`

@@ -1,37 +1,9 @@
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const express = require("express");
-
-const shared = require("../../shared/shared.js");
+const page = require("../app/app");
 
 const app = express();
-
-let page = () =>
-  React.createElement(
-    "html",
-    null,
-    React.createElement(
-      "head",
-      null,
-      " ",
-      React.createElement("title", null, " ", "SSR React", " "),
-      " "
-    ),
-    React.createElement(
-      "body",
-      null,
-      React.createElement(
-        "div",
-        {
-          id: "root",
-        },
-        React.createElement(shared.App.make, null)
-      ),
-      React.createElement("script", {
-        src: "/static/client.js",
-      })
-    )
-  );
 
 app.get("/", (_req, res) => {
   return res.send(
