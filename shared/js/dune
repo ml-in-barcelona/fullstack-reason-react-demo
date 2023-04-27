@@ -3,6 +3,6 @@
  (modes melange)
  (libraries melange reason_react bs_css bs_css_emotion bs_webapi)
  (preprocess
-  (pps reactjs-jsx-ppx)))
+  (pps melange.ppx reactjs-jsx-ppx)))
 
 (copy_files# "../*.re")

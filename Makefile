@@ -12,52 +12,46 @@ install: ## Install dependencies from esy.json and package.json
 	@$(ESY) install
 	@npm install
 
-.PHONY: client-bundle
-client-bundle: ## Bundle the JS code
+.PHONY: webpack
+webpack: ## Bundle the JS code
 	@$(WEBPACK) --env development
 
-.PHONY: client-bundle-watch
-client-bundle-watch: ## Watch and bundle the JS code
-	@$(WEBPACK) --watch --env development
-
-.PHONY: client-bundle
-client-bundle-prod: ## Bundle the JS code for production
+.PHONY: webpack-prod
+webpack-prod: ## Bundle the JS code for production
 	@$(WEBPACK) --env production
 
-.PHONY: client-build
-client-build: ## Build Reason code
+.PHONY: webpack-watch
+webpack-watch: ## Watch and bundle the JS code
+	@$(WEBPACK) --watch --env development
+
+.PHONY: build-client
+build-client: ## Build Reason code
 	@$(DUNE) build @client
 
-.PHONY: client-build-watch
-client-build-watch: ## Watch reason code
+.PHONY: build-client-watch
+build-client-watch: ## Watch reason code
 	@$(DUNE) build -w @client
 
-.PHONY: server-build
-server-build: ## Build the project, including non installable libraries and executables
-	@$(DUNE) build @@default
+.PHONY: build-server-prod
+build-server-prod: ## Build for production (--profile=prod)
+	@$(DUNE) build --profile=prod @server
 
-.PHONY: server-build-prod
-server-build-prod: ## Build for production (--profile=prod)
-	@$(DUNE) build --profile=prod @@default
+.PHONY: build-server
+build-server: ## Build the project, including non installable libraries and executables
+	@$(DUNE) build @server
 
-.PHONY: server-start
-server-start: ## Start the server
-	@$(DUNE) exec --root . --no-buffer server/server.exe
+.PHONY: start-server
+start-server: ## Start the server
+	@$(DUNE) exec server/server.exe
 
-.PHONY: server-dev
-server-dev: ## Build in watch mode
-	@$(DUNE) build -w @@default
+.PHONY: run
+run: ## Start the server in dev mode
+	@watchexec --no-ignore -w .processes/last_built_at.txt -r -c \
+	"clear; _build/default/server/server.exe"
 
-.PHONY: server-dev
-watch: ## Build in watch
-	@$(DUNE) build -w @@default
-
-.PHONY: dev
-dev: ## Start the server in dev mode
-	@watchexec \
-		-w client -w server -w shared -w vendor \
-		--exts re,rei,res,resi,ml,mli -r -c \
-		"$(MAKE) client-build; $(MAKE) server-build; $(MAKE) client-bundle; $(MAKE) server-start"
+.PHONY: watch
+watch: ## Build in watch mode
+	@$(DUNE) build -w @client @server
 
 .PHONY: clean
 clean: ## Clean artifacts

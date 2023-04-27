@@ -8,3 +8,13 @@
   server-reason-react.css)
  (preprocess
   (pps server-reason-react.ppx)))
+
+(rule
+ (alias server)
+ (deps ./server.exe)
+ (action
+  ; we want dune to write the file but not attach any fsevents listeners to it,
+  ; so that watchexec can read from it without issues.
+  ; this means no (target), no (with-stdout-to), just a bash command with stdout
+  ; redirect inside a string
+  (bash "date > %{project_root}/../../.processes/last_built_at.txt")))

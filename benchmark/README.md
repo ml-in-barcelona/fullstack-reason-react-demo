@@ -23,12 +23,12 @@ Command to run `wrk -t8 -c400 -d30s http://localhost:xxxx`
 
 ```sh
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   109.35us   42.15us   1.68ms   75.40%
-    Req/Sec     9.10k     2.11k   12.52k    51.08%
-  2179657 requests in 30.10s, 5.96GB read
-
-Requests/sec:  72414.39
-Transfer/sec:    202.62MB
+    Latency    40.82ms   10.45ms 188.76ms   85.29%
+    Req/Sec     1.22k   267.70     1.51k    70.58%
+  291638 requests in 30.08s, 270.62MB read
+  Socket errors: connect 0, read 964, write 0, timeout 0
+Requests/sec:   9695.68
+Transfer/sec:      9.00MB
 ```
 
 ### node-express-js
