@@ -1,5 +1,17 @@
 # Benchmark
 
+The benchmark doesn't represent a real world usage of the framework, but it's a closer approximation.
+
+It is running a simple web server that renders some React tree and responds with a stringified HTML. Consists of 1) node + express, 2) bun and 3) dream with server-reason-react.
+
+The application uses the same React tree in all 3 cases, so the differences are:
+
+- runtime
+- ReactDOM's implementation
+- server framework (if any)
+
+It's based on 384cd79c73be5baddf281b9a089bbf843e1b990d and not what's currently on main.
+
 ## Running the benchmark
 
 Command to run `wrk -t8 -c400 -d30s http://localhost:xxxx`
