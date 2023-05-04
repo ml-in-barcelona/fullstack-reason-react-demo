@@ -42,19 +42,22 @@ module Page = {
   };
 };
 
-let home =
-  ReactDOM.renderToString(
-    <Page src="/static/app.js"> <Shared_native.App /> </Page>,
-  );
-let header =
-  ReactDOM.renderToString(
-    <Page src="/static/header.js"> <Shared_native.Ahrefs /> </Page>,
-  );
-
 let handler =
   Dream.router([
-    Dream.get("/", _request => Dream.html(home)),
-    Dream.get("/header", _request => Dream.html(header)),
+    Dream.get("/", _request =>
+      Dream.html(
+        ReactDOM.renderToString(
+          <Page src="/static/app.js"> <Shared_native.App /> </Page>,
+        ),
+      )
+    ),
+    Dream.get("/header", _request =>
+      Dream.html(
+        ReactDOM.renderToString(
+          <Page src="/static/header.js"> <Shared_native.Ahrefs /> </Page>,
+        ),
+      )
+    ),
     Dream.get("/static/**", Dream.static("./static")),
   ]);
 

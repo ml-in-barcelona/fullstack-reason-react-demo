@@ -5,13 +5,11 @@ const page = require("../app/app");
 
 const app = express();
 
-let html = ReactDOMServer.renderToStaticMarkup(
-  React.createElement(page, null)
-);
-
 app.get("/", (_req, res) => {
   return res.send(
-    `<div id="root">${html}</div>`
+    `<div id="root">${ReactDOMServer.renderToStaticMarkup(
+      React.createElement(page, null)
+    )}</div>`
   );
 });
 
