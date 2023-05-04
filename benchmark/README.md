@@ -6,20 +6,6 @@ Command to run `wrk -t8 -c400 -d30s http://localhost:xxxx`
 
 ## Results
 
-### node-express-rescript
-
-  ```cd benchmark/node-express-rescript; NODE_ENV=production node index.js```
-
-```sh
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    40.82ms   10.45ms 188.76ms   85.29%
-    Req/Sec     1.22k   267.70     1.51k    70.58%
-  291638 requests in 30.08s, 270.62MB read
-
-Requests/sec:   9695.68
-Transfer/sec:      9.00MB
-```
-
 ### node-express-js
 
   ```cd benchmark/node-express-js; NODE_ENV=production node index.js```
