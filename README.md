@@ -1,12 +1,13 @@
 # fullstack-reason-react-demo
 
 > **Warning**
-> This repo is in constant flux as I'm polishing the experience with `server-reason-react` and related tooling.
+> This repo is in constant flux as I'm polishing the experience with [`server-reason-react`](https://github.com/ml-in-barcelona/server-reason-react) and related tooling.
 
-A demo of a fullstack reason-react app using Melange and Dream, which means
-all code is written in Reason and compiled by both [Melange](https://github.com/melange-re/melange) and OCaml. Showcasing server-reason-react.
+A demo of a fullstack reason-react app using Melange and Dream. Code is written in Reason and compiled by both [Melange](https://github.com/melange-re/melange) and OCaml.
 
-It uses dune to build the project and esy/npm for the dependencies.
+Demoing [server-reason-react](https://github.com/ml-in-barcelona/server-reason-react).
+
+---
 
 The app consist of 3 folders: `shared`, `server` and `client`, which encapsulates each compilation target defined by dune.
 
