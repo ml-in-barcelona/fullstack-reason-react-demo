@@ -64,7 +64,3 @@ The code of shared consist of an app to demostrate a few usages of server-reason
 - `server-reason-react.css` is the implementation of bs-css in the server. Maintains the same API and does the same functionality as emotion.js but in the server. All Css.* methods are available and generates the hash of the classnames. It also adds a fn `Css.render_style_tag()` to render the resultant CSS in the page, with the intention to be called in native.
 - `server-reason-react.belt` is the implementation of [Belt](https://rescript-lang.org/docs/manual/latest/api/belt) in pure OCaml.
 - `server-reason-react.js` is an incomplete implementation of [Js](https://rescript-lang.org/docs/manual/latest/api/js)
-
-## Problems
-
-- This demo relies on a few technologies/features that aren't polished. For now (dune, Melange and server-reason-react) are patched to specific versions from Github commit hashes. Check [esy.json](./esy.json) for exact versions.
