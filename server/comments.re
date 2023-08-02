@@ -104,9 +104,18 @@ module Comments = {
   };
 };
 
+module Layout = {
+  [@react.component]
+  let make = (~children) => {
+    <div style={ReactDOM.Style.make(~padding="20px", ~height="100%", ())}>
+      children
+    </div>;
+  };
+};
+
 module App = {
   let make = () => {
-    <div style={ReactDOM.Style.make(~padding="20px", ~height="100%", ())}>
+    <Layout>
       <nav> <a href="/"> {React.string("Home")} </a> </nav>
       <main
         style={ReactDOM.Style.make(~display="flex", ~marginTop="16px", ())}>
@@ -127,6 +136,6 @@ module App = {
           <h2> {React.string("Thanks for reading!")} </h2>
         </article>
       </main>
-    </div>;
+    </Layout>;
   };
 };
