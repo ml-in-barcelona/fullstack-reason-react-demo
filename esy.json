@@ -19,7 +19,7 @@
     "esy-openssl": "esy-packages/esy-openssl#619ae2d",
     "@opam/reactjs-jsx-ppx": "melange-re/melange:reactjs-jsx-ppx.opam#ebc038332c16e331ee4ab9017426e63461157cdd",
     "server-reason-react":
-      "ml-in-barcelona/server-reason-react:server-reason-react.opam#455042821093c8911d1cc2c623a3a1bd98ea6e32",
+      "ml-in-barcelona/server-reason-react:server-reason-react.opam#16fac6cfec3c711e06006ef6efbd23e1fbbdfacd",
     "@opam/dune": "ocaml/dune:dune.opam#418a4e7f17b7f2e491fb0ef775fc3a7277b267c7",
     "@opam/melange": "melange-re/melange:melange.opam#ebc038332c16e331ee4ab9017426e63461157cdd",
     "@opam/melange-compiler-libs": "melange-re/melange-compiler-libs:melange-compiler-libs.opam#575ac4c24b296ea897821f9aaee1146ff258c704",
