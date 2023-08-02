@@ -55,7 +55,7 @@ module Post = {
 };
 
 module Data = {
-  let delay = 0.2;
+  let delay = 1.0;
 
   let fakeData = [
     "Wait, it doesn't wait for React to load?",
@@ -113,11 +113,11 @@ module App = {
         <aside
           className="sidebar"
           style={ReactDOM.Style.make(~marginRight="16px", ())}>
-          <React.Suspense fallback={<Spinner />}> <Sidebar /> </React.Suspense>
+          <Sidebar />
         </aside>
         <article className="post">
           <h1> {React.string("Hello world")} </h1>
-          <React.Suspense fallback={<Spinner />}> <Post /> </React.Suspense>
+          <Post />
           <section className="comments">
             <h3> {React.string("Comments")} </h3>
             <React.Suspense fallback={<Spinner />}>
