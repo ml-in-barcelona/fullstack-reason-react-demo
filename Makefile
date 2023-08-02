@@ -42,7 +42,7 @@ build-server: ## Build the project, including non installable libraries and exec
 
 .PHONY: start-server
 start-server: ## Start the server
-	@$(DUNE) exec server/server.exe
+	@$(DUNE) exec server/server.exe --watch
 
 .PHONY: run
 run: ## Start the server in dev mode

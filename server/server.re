@@ -10,12 +10,19 @@ let globalStyles = {js|
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
   }
 |js};
 
 module Page = {
   [@react.component]
-  let make = (~children, ~src) => {
+  let make = (~children, ~scripts=[], ~styles=[]) => {
     <html>
       <head>
         <meta charSet="UTF-8" />
@@ -32,12 +39,19 @@ module Page = {
           type_="text/css"
           dangerouslySetInnerHTML={"__html": globalStyles}
         />
-        <style
-          type_="text/css"
-          dangerouslySetInnerHTML={"__html": Css.render_style_tag()}
-        />
+        {styles
+         |> List.map(content =>
+              <style
+                type_="text/css"
+                dangerouslySetInnerHTML={"__html": content}
+              />
+            )
+         |> React.list}
       </head>
-      <body> <div id="root"> children </div> <script src /> </body>
+      <body>
+        <div id="root"> children </div>
+        {scripts |> List.map(src => <script src />) |> React.list}
+      </body>
     </html>;
   };
 };
@@ -47,15 +61,37 @@ let handler =
     Dream.get("/", _request =>
       Dream.html(
         ReactDOM.renderToString(
-          <Page src="/static/app.js"> <Shared_native.App /> </Page>,
+          <Page scripts=["/static/app.js"] styles=[Css.render_style_tag()]>
+            <Shared_native.App />
+          </Page>,
         ),
       )
     ),
     Dream.get("/header", _request =>
       Dream.html(
         ReactDOM.renderToString(
-          <Page src="/static/header.js"> <Shared_native.Ahrefs /> </Page>,
+          <Page
+            scripts=["/static/header.js"] styles=[Css.render_style_tag()]>
+            <Shared_native.Ahrefs />
+          </Page>,
         ),
+      )
+    ),
+    Dream.get("/stream", _request =>
+      Dream.stream(
+        ~headers=[("Content-Type", "text/html")],
+        response_stream => {
+          let (stream, _) =
+            ReactDOM.renderToLwtStream(<Page> <Comments.App /> </Page>);
+
+          Lwt_stream.iter_s(
+            data => {
+              let%lwt () = Dream.write(response_stream, data);
+              Dream.flush(response_stream);
+            },
+            stream,
+          );
+        },
       )
     ),
     Dream.get("/static/**", Dream.static("./static")),
