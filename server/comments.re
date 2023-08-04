@@ -124,17 +124,19 @@ module App = {
           style={ReactDOM.Style.make(~marginRight="16px", ())}>
           <Sidebar />
         </aside>
-        <article className="post">
-          <h1> {React.string("Hello world")} </h1>
-          <Post />
-          <section className="comments">
-            <h3> {React.string("Comments")} </h3>
-            <React.Suspense fallback={<Spinner />}>
-              <Comments />
-            </React.Suspense>
-          </section>
-          <h2> {React.string("Thanks for reading!")} </h2>
-        </article>
+        <React.Suspense fallback={<Spinner />}>
+          <article className="post">
+            <h1> {React.string("Hello world")} </h1>
+            <Post />
+            <section className="comments">
+              <h3> {React.string("Comments")} </h3>
+              <React.Suspense fallback={<Spinner />}>
+                <Comments />
+              </React.Suspense>
+            </section>
+            <h2> {React.string("Thanks for reading!")} </h2>
+          </article>
+        </React.Suspense>
       </main>
     </Layout>;
   };
