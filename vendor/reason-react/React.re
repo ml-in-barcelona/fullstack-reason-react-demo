@@ -28,17 +28,23 @@ external createElementVariadic:
   (component('props), 'props, array(element)) => element =
   "createElement";
 
-[@bs.module "react"] [@deprecated "Please use JSX syntax directly."]
-external jsxKeyed: (component('props), 'props, string) => element = "jsx";
+[@bs.module "react/jsx-runtime"]
+external jsxKeyed:
+  (component('props), 'props, ~key: string=?, unit) => element =
+  "jsx";
 
-[@bs.module "react"] [@deprecated "Please use JSX syntax directly."]
+[@bs.module "react/jsx-runtime"]
 external jsx: (component('props), 'props) => element = "jsx";
 
-[@bs.module "react"] [@deprecated "Please use JSX syntax directly."]
+[@bs.module "react/jsx-runtime"]
 external jsxs: (component('props), 'props) => element = "jsxs";
 
-[@bs.module "react"] [@deprecated "Please use JSX syntax directly."]
-external jsxsKeyed: (component('props), 'props, string) => element = "jsxs";
+[@bs.module "react/jsx-runtime"]
+external jsxsKeyed:
+  (component('props), 'props, ~key: string=?, unit) => element =
+  "jsxs";
+
+[@bs.module "react/jsx-runtime"] external jsxFragment: 'element = "Fragment";
 
 type ref('value) = {mutable current: 'value};
 
@@ -120,16 +126,15 @@ external memoCustomCompareProps:
 
 module Fragment = {
   [@bs.obj]
-  external makeProps:
-    (~children: element, ~key: 'key=?, unit) => {. "children": element};
+  external makeProps: (~children: element, unit) => {. "children": element};
+
   [@bs.module "react"]
   external make: component({. "children": element}) = "Fragment";
 };
 
 module StrictMode = {
   [@bs.obj]
-  external makeProps:
-    (~children: element, ~key: 'key=?, unit) => {. "children": element};
+  external makeProps: (~children: element, unit) => {. "children": element};
   [@bs.module "react"]
   external make: component({. "children": element}) = "StrictMode";
 };
@@ -137,7 +142,7 @@ module StrictMode = {
 module Suspense = {
   [@bs.obj]
   external makeProps:
-    (~children: element=?, ~fallback: element=?, ~key: 'key=?, unit) =>
+    (~children: element=?, ~fallback: element=?, unit) =>
     {
       .
       "children": option(element),
@@ -153,35 +158,6 @@ module Suspense = {
     "Suspense";
 };
 
-/* Experimental React.SuspenseList */
-module SuspenseList = {
-  type revealOrder;
-  type tail;
-  [@bs.obj]
-  external makeProps:
-    (
-      ~children: element=?,
-      ~revealOrder: [ | `forwards | `backwards | `together]=?,
-      ~tail: [ | `collapsed | `hidden]=?,
-      unit
-    ) =>
-    {
-      .
-      "children": option(element),
-      "revealOrder": option(revealOrder),
-      "tail": option(tail),
-    };
-
-  [@bs.module "react"]
-  external make:
-    component({
-      .
-      "children": option(element),
-      "revealOrder": option(revealOrder),
-      "tail": option(tail),
-    }) =
-    "SuspenseList";
-};
 /* HOOKS */
 
 /*
@@ -210,6 +186,16 @@ external useReducerWithMapState:
   ) =>
   ('state, 'action => unit) =
   "useReducer";
+
+[@bs.module "react"]
+external useSyncExternalStore:
+  (
+    ~subscribe: [@bs.uncurry] (unit => unit),
+    ~getSnapshot: [@bs.uncurry] (unit => 'snapshot),
+    ~getServerSnapshot: [@bs.uncurry] (unit => 'snapshot)=?
+  ) =>
+  'snapshot =
+  "useSyncExternalStore";
 
 [@bs.module "react"]
 external useEffect: ([@bs.uncurry] (unit => option(unit => unit))) => unit =
@@ -253,6 +239,50 @@ external useEffect7:
   ) =>
   unit =
   "useEffect";
+
+[@bs.module "react"]
+external useInsertionEffect:
+  ([@bs.uncurry] (unit => option(unit => unit))) => unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect0:
+  ([@bs.uncurry] (unit => option(unit => unit)), [@bs.as {json|[]|json}] _) =>
+  unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect1:
+  ([@bs.uncurry] (unit => option(unit => unit)), array('a)) => unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect2:
+  ([@bs.uncurry] (unit => option(unit => unit)), ('a, 'b)) => unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect3:
+  ([@bs.uncurry] (unit => option(unit => unit)), ('a, 'b, 'c)) => unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect4:
+  ([@bs.uncurry] (unit => option(unit => unit)), ('a, 'b, 'c, 'd)) => unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect5:
+  ([@bs.uncurry] (unit => option(unit => unit)), ('a, 'b, 'c, 'd, 'e)) =>
+  unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect6:
+  ([@bs.uncurry] (unit => option(unit => unit)), ('a, 'b, 'c, 'd, 'e, 'f)) =>
+  unit =
+  "useInsertionEffect";
+[@bs.module "react"]
+external useInsertionEffect7:
+  (
+    [@bs.uncurry] (unit => option(unit => unit)),
+    ('a, 'b, 'c, 'd, 'e, 'f, 'g)
+  ) =>
+  unit =
+  "useInsertionEffect";
 
 [@bs.module "react"]
 external useLayoutEffect:
@@ -329,7 +359,7 @@ external useMemo7:
   ([@bs.uncurry] (unit => 'any), ('a, 'b, 'c, 'd, 'e, 'f, 'g)) => 'any =
   "useMemo";
 
-/* This is used as return values  */
+/* This is used as return values */
 type callback('input, 'output) = 'input => 'output;
 
 [@bs.module "react"]
@@ -379,6 +409,9 @@ external useCallback7:
 external useContext: Context.t('any) => 'any = "useContext";
 
 [@bs.module "react"] external useRef: 'value => ref('value) = "useRef";
+[@bs.module "react"] external useId: unit => string = "useId";
+
+[@bs.module "react"] external useDeferredValue: 'a => 'a = "useDeferredValue";
 
 [@bs.module "react"]
 external useImperativeHandle0:
@@ -523,16 +556,18 @@ module Uncurried = {
     "useCallback";
 };
 
-type transitionConfig = {timeoutMs: int};
-
 [@bs.module "react"]
-external useTransition:
-  (~config: transitionConfig=?, unit) =>
-  (callback(callback(unit, unit), unit), bool) =
+external useTransition: unit => (bool, callback(callback(unit, unit), unit)) =
   "useTransition";
+
+[@bs.module "react"] external use: Js.Promise.t('a) => 'a = "use";
 
 [@bs.set]
 external setDisplayName: (component('props), string) => unit = "displayName";
 
 [@bs.get] [@bs.return nullable]
 external displayName: component('props) => option(string) = "displayName";
+
+[@bs.module "react"]
+external useDebugValue: ('value, ~format: 'value => string=?, unit) => unit =
+  "useDebugValue";

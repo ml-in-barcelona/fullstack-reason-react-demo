@@ -104,9 +104,18 @@ module Comments = {
   };
 };
 
+module Layout = {
+  [@react.component]
+  let make = (~children) => {
+    <div style={ReactDOM.Style.make(~padding="20px", ~height="100%", ())}>
+      children
+    </div>;
+  };
+};
+
 module App = {
   let make = () => {
-    <div style={ReactDOM.Style.make(~padding="20px", ~height="100%", ())}>
+    <Layout>
       <nav> <a href="/"> {React.string("Home")} </a> </nav>
       <main
         style={ReactDOM.Style.make(~display="flex", ~marginTop="16px", ())}>
@@ -115,18 +124,20 @@ module App = {
           style={ReactDOM.Style.make(~marginRight="16px", ())}>
           <Sidebar />
         </aside>
-        <article className="post">
-          <h1> {React.string("Hello world")} </h1>
-          <Post />
-          <section className="comments">
-            <h3> {React.string("Comments")} </h3>
-            <React.Suspense fallback={<Spinner />}>
-              <Comments />
-            </React.Suspense>
-          </section>
-          <h2> {React.string("Thanks for reading!")} </h2>
-        </article>
+        <React.Suspense fallback={<Spinner />}>
+          <article className="post">
+            <h1> {React.string("Hello world")} </h1>
+            <Post />
+            <section className="comments">
+              <h3> {React.string("Comments")} </h3>
+              <React.Suspense fallback={<Spinner />}>
+                <Comments />
+              </React.Suspense>
+            </section>
+            <h2> {React.string("Thanks for reading!")} </h2>
+          </article>
+        </React.Suspense>
       </main>
-    </div>;
+    </Layout>;
   };
 };
