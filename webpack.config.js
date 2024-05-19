@@ -12,10 +12,5 @@ module.exports = (env) => ({
   output: {
     path: Path.join(__dirname, "static"),
     filename: "[name].js",
-  },
-  resolve: {
-    alias: {
-      "@emotion/hash": Path.join(buildFolder, "hash", "client", "hash.js"),
-    },
-  },
+  }
 });

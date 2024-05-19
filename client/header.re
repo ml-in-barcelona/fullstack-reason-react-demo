@@ -1,4 +1,4 @@
 switch (ReactDOM.querySelector("#root")) {
-| Some(el) => ReactDOM.hydrate(<Shared_js.Ahrefs />, el)
+| Some(el) => ignore @@ ReactDOM.Client.hydrateRoot(el, <Shared_js.Ahrefs />)
 | None => ()
 };
