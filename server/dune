@@ -7,7 +7,7 @@
   server-reason-react.reactDom
   styled-ppx.css)
  (preprocess
-  (pps server-reason-react.ppx lwt_ppx)))
+  (pps server-reason-react.melange_ppx server-reason-react.ppx lwt_ppx)))
 
 (rule
  (alias server)
