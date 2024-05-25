@@ -1,0 +1,34 @@
+From: Manas Jayanth <3097018+ManasJayanth@users.noreply.github.com>
+Date: Sat, 11 May 2024 10:29:53 +0530
+Subject: [PATCH] Fixes Windows build error, "Not a binary file"
+
+
+diff --git a/jscomp/core/gen/gen_traversal.ml b/jscomp/core/gen/gen_traversal.ml
+index c2da52d68..5dfc343d7 100644
+--- a/jscomp/core/gen/gen_traversal.ml
++++ b/jscomp/core/gen/gen_traversal.ml
+@@ -31,6 +31,7 @@
+     | Record_fold -> Record_fold.make typedefs
+   in
+   let oc = stdout in
++  set_binary_mode_out oc true;
+   write_ast oc ~input_name:input new_ast
+ 
+ let mode =
+
+diff --git a/jscomp/melstd/gen/build_reserved.ml b/jscomp/melstd/gen/build_reserved.ml
+index 99ebb7b31..fc5cfd561 100644
+--- a/jscomp/melstd/gen/build_reserved.ml
++++ b/jscomp/melstd/gen/build_reserved.ml
+@@ -241,6 +241,7 @@
+     keywords_array :: binary_search
+   in
+   let oc = stdout in
++  set_binary_mode_out oc true;
+   write_ast oc ast;
+   close_out oc
+ 
+
+-- 
+2.45.0.windows.1
+
