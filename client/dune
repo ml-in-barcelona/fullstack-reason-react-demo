@@ -2,23 +2,16 @@
  (alias client)
  (target app)
  (modules app)
- (libraries melange shared_js reason_react bs_css bs_css_emotion)
+ (libraries melange shared_js reason-react styled-ppx.css styled-ppx.emotion)
  (preprocess
-  (pps reactjs-jsx-ppx))
+  (pps melange.ppx reason-react-ppx))
  (module_systems commonjs))
 
 (melange.emit
  (alias client)
  (target header)
  (modules header)
- (libraries melange shared_js reason_react bs_css bs_css_emotion)
+ (libraries melange shared_js reason-react styled-ppx.css styled-ppx.emotion)
  (preprocess
-  (pps reactjs-jsx-ppx))
- (module_systems commonjs))
-
-(melange.emit
- (alias client)
- (target hash)
- (modules hash)
- (libraries melange server-reason-react.hash)
+  (pps melange.ppx reason-react-ppx))
  (module_systems commonjs))

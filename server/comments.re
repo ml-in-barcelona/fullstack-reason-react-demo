@@ -2,7 +2,7 @@ module Spinner = {
   let make = () => {
     <div
       role="progressbar"
-      ariaBusy="true"
+      ariaBusy=true
       style={ReactDOM.Style.make(
         ~display="inline-block",
         ~transition="opacity linear 0.1s",
@@ -82,7 +82,7 @@ module Data = {
 module Comments = {
   let make = () => {
     /* Sincronous data: let comments = Data.get(); */
-    let comments = React.use(Data.promise());
+    let comments = React.Experimental.use(Data.promise());
 
     <>
       {comments

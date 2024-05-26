@@ -7,8 +7,8 @@
   server-reason-react.reactDom
   server-reason-react.js
   server-reason-react.belt
-  server-reason-react.css)
+  styled-ppx.emotion_native)
  (preprocess
-  (pps melange.ppx server-reason-react.ppx)))
+  (pps styled-ppx melange.ppx server-reason-react.ppx)))
 
 (copy_files# "../*.re")

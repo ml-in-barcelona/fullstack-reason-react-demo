@@ -1,0 +1,10 @@
+{
+  "build": [
+    [
+      "bash",
+      "-c",
+      "#{os == 'linux' ? 'patch -p1 < no-dynlink.patch': 'true'}"
+    ],
+    "dune build -p ssl -j 4"
+  ]
+}

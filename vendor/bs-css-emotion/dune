@@ -1,5 +1,0 @@
-(library
- (name bs_css_emotion)
- (libraries bs_css)
- (wrapped false)
- (modes melange))
