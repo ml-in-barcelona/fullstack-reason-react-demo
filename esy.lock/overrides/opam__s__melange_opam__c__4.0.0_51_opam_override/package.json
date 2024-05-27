@@ -1,0 +1,10 @@
+{
+  "build": [
+    [
+      "bash",
+      "-c",
+      "#{os == 'windows' ? 'patch -p1 < ./awk.patch': 'true'}"
+    ],
+    "dune build -p melange -j4"
+  ]
+}
