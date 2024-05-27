@@ -9,7 +9,7 @@ RUN mkdir /esy
 WORKDIR /esy
 
 ENV NPM_CONFIG_PREFIX=/esy
-RUN npm install -g esy@0.6.12
+RUN npm install -g esy@0.7.2
 
 # Alpine image where
 FROM node:16.3-alpine3.12 as esy
