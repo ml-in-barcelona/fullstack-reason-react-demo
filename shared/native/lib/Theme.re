@@ -17,7 +17,6 @@ module Color = {
   let black = Css.black;
   let reason = Css.hex("db4d3f");
   let react = Css.hex("149eca");
-  let ahrefs = Css.hex("ff8800");
   let lightGrey = Css.hex("c1c5cd");
   let darkGrey = Css.hex("292a2d");
   let backgroundBox = Css.hex("2e3c56");

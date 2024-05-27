@@ -6,12 +6,3 @@
  (preprocess
   (pps melange.ppx reason-react-ppx))
  (module_systems commonjs))
-
-(melange.emit
- (alias client)
- (target header)
- (modules header)
- (libraries melange shared_js reason-react styled-ppx.css styled-ppx.emotion)
- (preprocess
-  (pps melange.ppx reason-react-ppx))
- (module_systems commonjs))
