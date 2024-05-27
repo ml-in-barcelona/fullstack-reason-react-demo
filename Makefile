@@ -80,5 +80,4 @@ docker-build: ## docker build
 
 .PHONY: docker-run
 docker-run: ## docker run
-	@docker run -d --platform linux/amd64 \
-	@$(name):$(current_hash)
+	@docker run -d --platform linux/amd64 @$(name):$(current_hash)
