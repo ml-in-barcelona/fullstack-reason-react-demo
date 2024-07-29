@@ -67,16 +67,6 @@ let handler =
         ),
       )
     ),
-    Dream.get("/header", _request =>
-      Dream.html(
-        ReactDOM.renderToString(
-          <Page
-            scripts=["/static/header.js"] styles=[Css.render_style_tag()]>
-            <Shared_native.Ahrefs />
-          </Page>,
-        ),
-      )
-    ),
     Dream.get("/stream", _request =>
       Dream.stream(
         ~headers=[("Content-Type", "text/html")],
