@@ -72,7 +72,7 @@ let handler =
         ReactDOM.renderToString(
           <Page
             scripts=["/static/header.js"] styles=[Css.render_style_tag()]>
-            <Shared_native.Ahrefs />
+            <Shared_native.App />
           </Page>,
         ),
       )
